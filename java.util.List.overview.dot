@@ -1,0 +1,34 @@
+digraph G {
+
+	node [shape=box, style=filled, color=lightblue]
+	{ 
+		node [shape=box, style=filled, color=green];
+		rank = same; 
+		ArrayList; LinkedList; Stack; Vector; CopyOnWriteArrayList; 
+	}
+
+	{ node[style=solid, color=grey, fontcolor=grey]; Queue; Deque; }
+
+	Collection -> List
+	Collection -> Queue [color=grey]
+
+	Queue -> Deque [color=grey]
+
+	Deque -> LinkedList [color=grey]
+
+	List -> AbstractList
+	List -> CopyOnWriteArrayList
+
+	AbstractList -> ArrayList
+	AbstractList -> AbstractSequentialList
+	AbstractList -> Vector
+
+	RandomAccess -> ArrayList
+	RandomAccess -> CopyOnWriteArrayList
+	RandomAccess -> Vector
+
+	Stack -> Vector
+
+	AbstractSequentialList -> LinkedList
+
+}
