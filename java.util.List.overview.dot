@@ -1,13 +1,28 @@
 digraph G {
 
-	node [shape=box, style=filled, color=lightblue]
-	{ 
-		node [shape=box, style=filled, color=green];
-		rank = same; 
+        {
+                // interfaces
+                node [shape=box, style=filled, color=lightblue]
+		Collection; List; RandomAccess;
+        }
+        {
+                // abstract 
+                node [shape=box, style=filled, color=yellow];
+		AbstractList; AbstractSequentialList
+        }
+
+        {
+                // classes 
+                node [shape=box, style=filled, color=green];
+		rank = same;
 		ArrayList; LinkedList; Stack; Vector; CopyOnWriteArrayList; 
 	}
 
-	{ node[style=solid, color=grey, fontcolor=grey]; Queue; Deque; }
+	{
+		// in dem kontext nicht wichtig, aber interessant
+		node[style=solid, color=grey, fontcolor=grey]; 
+		Queue; Deque;
+	}
 
 	Collection -> List
 	Collection -> Queue [color=grey]
