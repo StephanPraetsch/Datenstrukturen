@@ -1,1 +1,23 @@
+Liste von Sets die auf den ersten Blick interessant ausschauen.
 
+java.util.HashSet
+java.util.TreeSet
+java.util.LinkedHashSet
+java.util.concurrent.CopyOnWriteArraySet
+java.util.concurrent.ConcurrentSkipListSet
+java.util.concurrent. ConcurrentHashMap.KeySetView
+
+
+
+org.apache.commons.collections.set.CompositeSet
+org.apache.commons.collections.set.PredicateSet
+org.apache.commons.collections.set.ListOrderedSet
+org.apache.commons.collections.set.MapBackedSet
+org.apache.commons.collections.set.SynchronizedSet
+org.apache.commons.collections.set.TransformedSet
+org.apache.commons.collections.set.UnmodifiableSet
+org.castor.util.IdentitySet (auch in diversen weiteren packages)
+org.eclipse.jetty.util.ConcurrentHashSet
+
+
+EmptySet und CartesianSet existieren auch hier
