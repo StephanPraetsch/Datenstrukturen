@@ -1,0 +1,46 @@
+digraph G {
+
+	node [shape=box, style=filled, color=lightblue]
+	{ rank = same; Iterable }
+	{ rank = same; Collection }
+	{ rank = same; List; Set; Map; Queue; }
+
+	{ 
+		node [shape=box, style=filled, color=green];
+		rank = same; 
+		Vector; ArrayList; LinkedList; HashSet; TreeSet; HashMap; TreeMap; 
+	}
+
+
+	Iterable -> Collection
+	
+	Collection -> List
+	Collection -> Set
+	Collection -> Queue
+	
+	List -> Vector
+	List -> ArrayList
+	List -> LinkedList
+
+	RandomAccess -> Vector
+	RandomAccess -> ArrayList
+
+	Queue -> Deque
+
+	Deque -> LinkedList
+
+	Set -> HashSet
+	Set -> SortedSet
+	
+	SortedSet -> NavigableSet
+
+	NavigableSet -> TreeSet	
+
+	Map -> HashMap
+	Map -> SortedMap
+
+	SortedMap -> NavigableMap
+
+	NavigableMap -> TreeMap
+
+}
