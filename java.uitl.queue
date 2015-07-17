@@ -1,0 +1,14 @@
+java.util.concurrent.SynchronousQueue
+java.util.concurrent.PriorityBlockingQueue
+java.util.PriorityQueue
+java.util.concurrent.LinkedBlockingQueue
+java.util.concurrent.LinkedTransferQueue
+java.util.LinkedList
+java.util.concurrent.ConcurrentLinkedQueue
+java.util.concurrent.DelayQueue
+java.util.concurrent.LinkedBlockingDeque
+java.util.concurrent.ConcurrentLinkedDqueue
+java.util.ArrayDeque
+java.util.concurrent.ArrayBlockingQueue
+
+todo: ausserhalb von java.util schauen
