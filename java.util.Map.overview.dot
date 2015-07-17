@@ -1,0 +1,49 @@
+digraph G {
+
+	{
+		// interfaces
+		node [shape=box, style=filled, color=lightblue]
+		Map; ConcurrentMap; NavigableMap; ConcurrentNavigableMap; SortedMap;
+	}
+	{
+		// abstract 
+		node [shape=box, style=filled, color=yellow];
+		//rank = same;
+		AbstractMap; 
+	}
+
+	{
+		// classes 
+		node [shape=box, style=filled, color=green];
+		//rank = same;
+		Hashtable; HashMap; IdentityHashMap; WeakHashMap; ConcurrentSkipListMap;
+		EnumMap; TreeMap; LinkedHashMap; ConcurrentHashMap; Properties;
+	}
+
+	Map -> AbstractMap
+	Map -> Hashtable
+	Map -> ConcurrentMap
+	Map -> SortedMap
+
+	AbstractMap -> HashMap
+	AbstractMap -> IdentityHashMap
+	AbstractMap -> WeakHashMap
+	AbstractMap -> ConcurrentSkipListMap
+	AbstractMap -> EnumMap
+	AbstractMap -> TreeMap
+	
+	HashMap -> LinkedHashMap
+
+	SortedMap -> NavigableMap
+	SortedMap -> ConcurrentHashMap
+
+	ConcurrentMap -> ConcurrentHashMap
+	ConcurrentMap -> ConcurrentNavigableMap
+
+	ConcurrentNavigableMap -> ConcurrentSkipListMap
+
+	NavigableMap -> TreeMap
+
+	Hashtable -> Properties
+
+}
