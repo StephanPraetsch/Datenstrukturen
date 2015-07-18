@@ -1,0 +1,151 @@
+digraph Queue {
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+
+node [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+shape = "record"
+]
+
+edge [
+arrowtail = "empty"
+]
+
+//interfaces
+Collection [
+label = "{\<\<inteface\>\>\nCollection|\l}"
+]
+
+Queue [
+label = "{\<\<inteface\>\>\nQueue|\l}"
+]
+
+BlockingQueue [
+label = "{\<\<inteface\>\>\nBlockingQueue|\l}"
+]
+
+BlockingDeque [
+label = "{\<\<inteface\>\>\nBlockingDeque|\l}"
+]
+
+TransferQueue [
+label = "{\<\<inteface\>\>\nTransferQueue|\l}"
+]
+
+Deque [
+label = "{\<\<inteface\>\>\nDeque|\l}"
+]
+
+//abstracts
+
+AbstractCollection [
+label = "{AbstractCollection|\l}"
+]
+
+AbstractQueue [
+label = "{AbstractQueue|\l}"
+]
+
+
+//implementations
+
+SynchronousQueue [
+label = "{SynchronousQueue|\l}"
+]
+
+PriorityBlockingQueue [
+label = "{PriorityBlockingQueue|\l}"
+]
+
+PriorityQueue [
+label = "{PriorityQueue|\l}"
+]
+
+LinkedBlockingQueue [
+label = "{LinkedBlockingQueue|\l}"
+]
+
+LinkedTransferQueue [
+label = "{LinkedTransferQueue|\l}"
+]
+
+LinkedList [
+label = "{LinkedList|\l}"
+]
+
+ConcurrentLinkeDeque [
+label = "{ConcurrentLinkeDeque|\l}"
+]
+
+DelayQueue [
+label = "{DelayQueue|\l}"
+]
+
+LinkedBlockingDeque [
+label = "{LinkedBlockingDeque|\l}"
+]
+
+ConcurrentLinkedDeque [
+label = "{ConcurrentLinkedDeque|\l}"
+]
+
+ArrayDeque [
+label = "{ArrayDeque|\l}"
+]
+
+ArrayBlockingQueue [
+label = "{ArrayBlockingQueue|\l}"
+]
+
+Collection -> Queue [dir=back]
+Collection -> AbstractCollection[dir=back]
+
+AbstractCollection -> AbstractQueue[dir=back]
+
+//Relations
+Queue -> AbstractQueue [dir=back]
+Queue -> BlockingQueue[dir=back]
+
+Queue -> Deque [dir=back]
+
+BlockingQueue -> BlockingDeque [dir=back]
+BlockingQueue -> TransferQueue [dir=back]
+
+BlockingQueue -> SynchronousQueue [dir=back]
+AbstractQueue -> SynchronousQueue [dir=back]
+
+BlockingQueue -> PriorityBlockingQueue [dir=back]
+AbstractQueue -> PriorityBlockingQueue [dir=back]
+
+BlockingQueue -> ArrayBlockingQueue [dir=back]
+AbstractQueue -> ArrayBlockingQueue [dir=back]
+
+BlockingQueue -> DelayQueue [dir=back]
+AbstractQueue -> DelayQueue [dir=back]
+
+BlockingQueue -> LinkedBlockingQueue [dir=back]
+AbstractQueue -> LinkedBlockingQueue [dir=back]
+
+AbstractQueue -> LinkedBlockingDeque [dir=back]
+BlockingDeque -> LinkedBlockingDeque [dir=back]
+
+AbstractQueue -> LinkedTransferQueue [dir=back]
+TransferQueue -> LinkedTransferQueue [dir=back]
+
+AbstractQueue -> ConcurrentLinkeDeque [dir=back]
+Queue -> ConcurrentLinkeDeque [dir=back]
+
+AbstractQueue -> ConcurrentLinkedDeque [dir=back]
+Deque -> ConcurrentLinkedDeque [dir=back]
+
+AbstractQueue -> PriorityQueue [dir=back]
+
+Deque -> LinkedList [dir=back]
+
+AbstractCollection -> ArrayDeque [dir=back]
+Deque -> ArrayDeque [dir=back]
+}
+//packages?
+//wichtigsten Methonde der Interfaces
+//Verbingung zu AbstractQ entfernen? LinkedList Extended nicht 
