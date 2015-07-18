@@ -22,3 +22,4 @@ Laufzeiten:
 add:            O(1)
 remove(Object): O(1)
 remove(int):    O(n)
+get(int)        O(n)
