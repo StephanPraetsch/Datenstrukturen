@@ -1,6 +1,17 @@
+
+* backed by array (Object[])
+* Kapazität kann explizit durch ensureCapacity erhöht werden
+* fail fast Iterator
+* quasi nicht synchronisierter Vektor (javadocs)
+* null erlaubt
+* remove Operationen verkleinern das Array nicht (trimToSize explizit)
+* Verschieben und resizen mit System.arrycopy
+* Manipulationen (remove, add) sollten nur am Ende der Liste geschehen
+
 Zugriffszeiten
 
-add:            O(1)  /O(n) with resize
-remove(Object)  O(n)
-remove(int)     O(n) / shifting
-get:            O(1)
+add:              O(1)  /O(n) with resize
+add(int, Object)  O(n)  /... umso kleiner position, umso länger die Laufzeit
+remove(Object)    O(n)
+remove(int)       O(n) / shifting
+get:              O(1)
