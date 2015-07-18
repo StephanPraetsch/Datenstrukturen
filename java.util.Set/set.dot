@@ -1,0 +1,91 @@
+digraph Queue {
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+
+node [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+shape = "record"
+]
+
+edge [
+arrowtail = "empty"
+]
+
+//interfaces
+Collection [
+label = "{\<\<interface\>\>\nCollection|\l}"
+]
+
+Set [
+label = "{\<\<interface\>\>\nSet|\l}"
+]
+
+NavigableSet [
+label = "{\<\<interface\>\>\nNavigableSet|\l}"
+]
+
+SortedSet [
+label = "{\<\<interface\>\>\nSortedSet|\l}"
+]
+
+//abstracts
+
+AbstractSet [
+label = "{AbstractSet|\l}"
+]
+
+
+//implementations
+
+HashSet [
+label = "{HashSet|\l}"
+]
+
+TreeSet [
+label = "{TreeSet|\l}"
+]
+
+CopyOnWriteArraySet [
+label = "{CopyOnWriteArraySet|\l}"
+]
+
+ConcurrentSkipListSet [
+label = "{ConcurrentSkipListSet|\l}"
+]
+
+LinkedHashSet [
+label = "{LinkedHashSet|\l}"
+]
+
+
+
+
+//Relations
+Collection -> AbstractCollection [dir=back]
+Collection -> Set [dir=back]
+
+Set -> SortedSet [dir=back]
+SortedSet -> NavigableSet [dir=back]
+
+Set -> AbstractSet [dir=back]
+AbstractCollection -> AbstractSet [dir=back]
+
+AbstractSet -> ConcurrentSkipListSet [dir=back]
+NavigableSet -> ConcurrentSkipListSet [dir=back]
+
+AbstractSet -> CopyOnWriteArraySet [dir=back]
+
+Set -> LinkedHashSet [dir=back]
+HashSet -> LinkedHashSet [dir=back]
+
+AbstractSet -> TreeSet [dir=back]
+NavigableSet -> TreeSet [dir=back]
+
+Set -> HashSet [dir=back]
+AbstractSet -> HashSet [dir=back]
+
+}
+//packages?
+//wichtigsten Methonde der Interfaces
+//Verbingung zu AbstractQ entfernen? LinkedList Extended nicht 
