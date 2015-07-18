@@ -1,5 +1,6 @@
 Zugriffszeiten
 
-add:
-remove(Object)
-remove(int)
+add:            O(1)  /O(n) with resize
+remove(Object)  O(n)
+remove(int)     O(n) / shifting
+get:            O(1)
