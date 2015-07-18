@@ -7,6 +7,7 @@
 * remove Operationen verkleinern das Array nicht (trimToSize explizit)
 * Verschieben und resizen mit System.arrycopy
 * Manipulationen (remove, add) sollten nur am Ende der Liste geschehen
+* CPU-cache friendly collection due to being backed by an array (unfortunately, not too friendly, because contains Objects, which are just pointers to the actual objects)
 
 Zugriffszeiten
 
