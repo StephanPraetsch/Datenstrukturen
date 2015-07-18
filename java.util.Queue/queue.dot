@@ -14,27 +14,27 @@ arrowtail = "empty"
 
 //interfaces
 Collection [
-label = "{\<\<inteface\>\>\nCollection|\l}"
+label = "{\<\<interface\>\>\nCollection|\l}"
 ]
 
 Queue [
-label = "{\<\<inteface\>\>\nQueue|\l}"
+label = "{\<\<interface\>\>\nQueue|\l}"
 ]
 
 BlockingQueue [
-label = "{\<\<inteface\>\>\nBlockingQueue|\l}"
+label = "{\<\<interface\>\>\nBlockingQueue|\l}"
 ]
 
 BlockingDeque [
-label = "{\<\<inteface\>\>\nBlockingDeque|\l}"
+label = "{\<\<interface\>\>\nBlockingDeque|\l}"
 ]
 
 TransferQueue [
-label = "{\<\<inteface\>\>\nTransferQueue|\l}"
+label = "{\<\<interface\>\>\nTransferQueue|\l}"
 ]
 
 Deque [
-label = "{\<\<inteface\>\>\nDeque|\l}"
+label = "{\<\<interface\>\>\nDeque|\l}"
 ]
 
 //abstracts
