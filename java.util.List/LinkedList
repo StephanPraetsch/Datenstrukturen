@@ -5,7 +5,6 @@ java.util.LinkedList<E>
 * operationen mit index traversieren durch die gesamte liste (beginnend vorne oder hinten)
 * nicht thread-safe
 * fail-fast iteratoren
-* Iterator.remove und add O(1)
 * lieber ArrayList nehmen http://docs.oracle.com/javase/tutorial/collections/implementations/list.html
 ** Most of the time, you'll probably use ArrayList
 ** ArrayList can take advantage of System.arraycopy
@@ -15,3 +14,11 @@ java.util.LinkedList<E>
 
 Wann LinkedList?
 Wenn man die Liste als Deque benutzt.
+Wenn oft remove(Object) genutzt wird (schneller als ArrayList.remove(Object))
+
+
+Laufzeiten:
+
+add:            O(1)
+remove(Object): O(1)
+remove(int):    O(n)
