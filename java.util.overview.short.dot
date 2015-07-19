@@ -1,0 +1,35 @@
+digraph G {
+
+        rankdir=BT
+
+        node [
+                shape = "record"
+        ]
+
+        edge [
+                arrowhead = "empty"
+        ]
+
+	Iterable [label="\<\<interface\>\>\nIterable"]
+	Collection [label="\<\<interface\>\>\nCollection"]
+	List [label="\<\<interface\>\>\nList"]
+	Set [label="\<\<interface\>\>\nSet"]
+	Queue [label="\<\<interface\>\>\nQueue"]
+	Map [label="\<\<interface\>\>\nMap"]
+
+	{ rank = same; List; Set; Map; Queue; }
+
+	{ rank = same; 	ArrayList; LinkedList; HashSet; HashMap; PriorityQueue; }
+
+	Collection -> Iterable
+	List -> Collection
+	Set -> Collection
+	Queue -> Collection
+	ArrayList -> List
+	LinkedList -> List
+	LinkedList -> Queue
+	HashSet -> Set
+	HashMap -> Map
+	PriorityQueue -> Queue
+
+}
