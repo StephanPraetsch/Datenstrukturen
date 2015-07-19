@@ -1,0 +1,28 @@
+digraph G {
+	
+	rankdir=BT
+
+        node [
+                shape = "record"
+        ]
+
+        edge [
+		arrowhead = "empty"
+        ]
+
+	Collection [label="\<\<interface\>\>\nCollection"]
+	Set [label="\<\<interface\>\>\nSet"]
+	SortedSet [label="\<\<interface\>\>\nSortedSet"]
+	NavigableSet [label="\<\<interface\>\>\nNavigableSet"]
+
+	Set -> Collection
+	CopyOnWriteArraySet -> Set
+	HashSet -> Set
+	SortedSet -> Set
+	LinkedHashSet -> HashSet
+	NavigableSet -> SortedSet
+	TreeSet -> NavigableSet
+	ConcurrentSkipListSet -> NavigableSet
+
+}
+
