@@ -22,14 +22,15 @@ digraph G {
 	NavigableSet [label="\<\<interface\>\>\nNavigableSet"]
 	SortedMap [label="\<\<interface\>\>\nSortedMap"]
 	NavigableMap [label="\<\<interface\>\>\nNavigableMap"]
+	BlockingQueue [label="\<\<interface\>\>\nBlockingQueue"]
+	ConcurrentMap [label="\<\<interface\>\>\nConcurrentMap"]
 
-	{ rank = same; Iterable }
-	{ rank = same; Collection }
 	{ rank = same; List; Set; Map; Queue; }
 
 	{ 
 		rank = same; 
-		Vector; ArrayList; LinkedList; HashSet; TreeSet; HashMap; TreeMap; 
+		Vector; ArrayList; LinkedList; HashSet; TreeSet; HashMap; TreeMap;
+		ConcurrentHashMap; LinkedBlockingQueue; PriorityQueue;
 	}
 
 
@@ -52,5 +53,10 @@ digraph G {
 	SortedMap -> Map
 	NavigableMap -> SortedMap
 	TreeMap -> NavigableMap
+	ConcurrentMap -> Map
+	ConcurrentHashMap -> ConcurrentMap
+	BlockingQueue -> Queue
+	LinkedBlockingQueue -> BlockingQueue
+	PriorityQueue -> Queue
 
 }
