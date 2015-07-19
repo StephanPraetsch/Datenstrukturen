@@ -1,49 +1,37 @@
 digraph G {
 
-        {
-                // interfaces
-                node [shape=box, style=filled, color=lightblue]
-		Collection; List; RandomAccess;
-        }
-        {
-                // abstract 
-                node [shape=box, style=filled, color=yellow];
-		AbstractList; AbstractSequentialList
-        }
+        rankdir=BT
 
-        {
-                // classes 
-                node [shape=box, style=filled, color=green];
-		rank = same;
+        node [
+                shape = "record"
+        ]
+
+        edge [
+                arrowhead = "empty"
+        ]
+
+
+	Collection [label="\<\<interface\>\>\nCollection"]
+	List [label="\<\<interface\>\>\nList"]
+	RandomAccess [label="\<\<interface\>\>\nRandomAccess"]
+
+	{
+		//rank = same;
 		ArrayList; LinkedList; Stack; Vector; CopyOnWriteArrayList; 
 	}
 
-	{
-		// in dem kontext nicht wichtig, aber interessant
-		node[style=solid, color=grey, fontcolor=grey]; 
-		Queue; Deque;
-	}
+	List -> Collection
+	CopyOnWriteArrayList -> List
 
-	Collection -> List
-	Collection -> Queue [color=grey]
+	ArrayList -> List
+	Vector -> List
 
-	Queue -> Deque [color=grey]
-
-	Deque -> LinkedList [color=grey]
-
-	List -> AbstractList
-	List -> CopyOnWriteArrayList
-
-	AbstractList -> ArrayList
-	AbstractList -> AbstractSequentialList
-	AbstractList -> Vector
-
-	RandomAccess -> ArrayList
-	RandomAccess -> CopyOnWriteArrayList
-	RandomAccess -> Vector
+	ArrayList -> RandomAccess
+	CopyOnWriteArrayList -> RandomAccess
+	Vector -> RandomAccess
 
 	Stack -> Vector
 
-	AbstractSequentialList -> LinkedList
+	LinkedList -> List
 
 }
