@@ -74,10 +74,6 @@ LinkedList [
 label = "{LinkedList|\l}"
 ]
 
-ConcurrentLinkeDeque [
-label = "{ConcurrentLinkeDeque|\l}"
-]
-
 DelayQueue [
 label = "{DelayQueue|\l}"
 ]
@@ -126,9 +122,8 @@ BlockingDeque -> LinkedBlockingDeque [dir=back]
 
 TransferQueue -> LinkedTransferQueue [dir=back]
 
-Queue -> ConcurrentLinkeDeque [dir=back]
-
 Deque -> ConcurrentLinkedDeque [dir=back]
+AbstractCollection -> ConcurrentLinkedDeque [dir=back]
 
 AbstractQueue -> PriorityQueue [dir=back]
 
