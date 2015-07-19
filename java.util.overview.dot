@@ -1,46 +1,56 @@
 digraph G {
 
-	node [shape=box, style=filled, color=lightblue]
+        rankdir=BT
+
+        node [
+                shape = "record"
+        ]
+
+        edge [
+                arrowhead = "empty"
+        ]
+
+	Iterable [label="\<\<interface\>\>\nIterable"]
+	Collection [label="\<\<interface\>\>\nCollection"]
+	List [label="\<\<interface\>\>\nList"]
+	Set [label="\<\<interface\>\>\nSet"]
+	Queue [label="\<\<interface\>\>\nQueue"]
+	Map [label="\<\<interface\>\>\nMap"]
+	Deque [label="\<\<interface\>\>\nDeque"]
+	RandomAccess [label="\<\<interface\>\>\nRandomAccess"]
+	SortedSet [label="\<\<interface\>\>\nSortedSet"]
+	NavigableSet [label="\<\<interface\>\>\nNavigableSet"]
+	SortedMap [label="\<\<interface\>\>\nSortedMap"]
+	NavigableMap [label="\<\<interface\>\>\nNavigableMap"]
+
 	{ rank = same; Iterable }
 	{ rank = same; Collection }
 	{ rank = same; List; Set; Map; Queue; }
 
 	{ 
-		node [shape=box, style=filled, color=green];
 		rank = same; 
 		Vector; ArrayList; LinkedList; HashSet; TreeSet; HashMap; TreeMap; 
 	}
 
 
-	Iterable -> Collection
-	
-	Collection -> List
-	Collection -> Set
-	Collection -> Queue
-	
-	List -> Vector
-	List -> ArrayList
-	List -> LinkedList
-
-	RandomAccess -> Vector
-	RandomAccess -> ArrayList
-
-	Queue -> Deque
-
-	Deque -> LinkedList
-
-	Set -> HashSet
-	Set -> SortedSet
-	
-	SortedSet -> NavigableSet
-
-	NavigableSet -> TreeSet	
-
-	Map -> HashMap
-	Map -> SortedMap
-
-	SortedMap -> NavigableMap
-
-	NavigableMap -> TreeMap
+	Collection -> Iterable
+	List -> Collection
+	Set -> Collection
+	Queue -> Collection
+	Vector -> List
+	ArrayList -> List
+	LinkedList -> List
+	Vector -> RandomAccess
+	ArrayList -> RandomAccess
+	Deque -> Queue
+	LinkedList -> Deque
+	HashSet -> Set
+	SortedSet -> Set
+	NavigableSet -> SortedSet
+	TreeSet -> NavigableSet
+	HashMap -> Map
+	SortedMap -> Map
+	NavigableMap -> SortedMap
+	TreeMap -> NavigableMap
 
 }
