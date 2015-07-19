@@ -1,49 +1,36 @@
 digraph G {
 
-	{
-		// interfaces
-		node [shape=box, style=filled, color=lightblue]
-		Map; ConcurrentMap; NavigableMap; ConcurrentNavigableMap; SortedMap;
-	}
-	{
-		// abstract 
-		node [shape=box, style=filled, color=yellow];
-		//rank = same;
-		AbstractMap; 
-	}
+        rankdir=BT
 
-	{
-		// classes 
-		node [shape=box, style=filled, color=green];
-		//rank = same;
-		Hashtable; HashMap; IdentityHashMap; WeakHashMap; ConcurrentSkipListMap;
-		EnumMap; TreeMap; LinkedHashMap; ConcurrentHashMap; Properties;
-	}
+        node [
+                shape = "record"
+        ]
 
-	Map -> AbstractMap
-	Map -> Hashtable
-	Map -> ConcurrentMap
-	Map -> SortedMap
+        edge [
+                arrowhead = "empty"
+        ]
 
-	AbstractMap -> HashMap
-	AbstractMap -> IdentityHashMap
-	AbstractMap -> WeakHashMap
-	AbstractMap -> ConcurrentSkipListMap
-	AbstractMap -> EnumMap
-	AbstractMap -> TreeMap
-	
-	HashMap -> LinkedHashMap
 
-	SortedMap -> NavigableMap
-	SortedMap -> ConcurrentHashMap
+	Map [label="\<\<interface\>\>\nMap"]
+	ConcurrentMap [label="\<\<interface\>\>\nConcurrentMap"]
+	NavigableMap [label="\<\<interface\>\>\nNavigableMap"]
+	ConcurrentNavigableMap [label="\<\<interface\>\>\nConcurrentNavigableMap"]
+	SortedMap [label="\<\<interface\>\>\nSortedMap"]
 
-	ConcurrentMap -> ConcurrentHashMap
-	ConcurrentMap -> ConcurrentNavigableMap
-
-	ConcurrentNavigableMap -> ConcurrentSkipListMap
-
-	NavigableMap -> TreeMap
-
-	Hashtable -> Properties
+	Hashtable -> Map
+	ConcurrentMap -> Map
+	SortedMap -> Map
+	HashMap -> Map
+	IdentityHashMap -> Map
+	WeakHashMap -> Map
+	EnumMap -> Map
+	LinkedHashMap -> HashMap
+	NavigableMap -> SortedMap
+	ConcurrentHashMap -> ConcurrentMap
+	ConcurrentNavigableMap -> ConcurrentMap
+	ConcurrentNavigableMap -> NavigableMap
+	ConcurrentSkipListMap -> ConcurrentNavigableMap
+	TreeMap -> NavigableMap
+	Properties -> Hashtable
 
 }
