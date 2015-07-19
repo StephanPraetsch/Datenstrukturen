@@ -1,0 +1,40 @@
+digraph G {
+	
+	rankdir=BT
+
+        node [
+                shape = "record"
+        ]
+
+        edge [
+		arrowhead = "empty"
+        ]
+
+	Collection [label="\<\<interface\>\>\nCollection"]
+	Queue [label="\<\<interface\>\>\nQueue"]
+	Deque [label="\<\<interface\>\>\nDeque"]
+	BlockingQueue [label="\<\<interface\>\>\nBlockingQueue"]
+	BlockingDeque [label="\<\<interface\>\>\nBlockingDeque"]
+	TransferQueue [label="\<\<interface\>\>\nTransferQueue"]
+
+	Queue -> Collection
+	Deque -> Queue
+	ConcurrentLinkDeque -> Deque
+	PriorityQueue -> Queue
+	ArrayDeque -> Deque
+	ConcurrentLinkedDeque -> Deque
+	LinkedList -> Deque
+	BlockingQueue -> Queue
+	TransferQueue -> BlockingQueue
+	LinkedTransferQueue -> TransferQueue
+	ArrayBlockingQueue -> BlockingQueue
+	DelayQueue -> BlockingQueue
+	LinkedBlockingQueue -> BlockingQueue
+	PriorityBlockingQueue -> BlockingQueue
+	SynchronousQueue -> BlockingQueue
+	BlockingDeque -> BlockingQueue
+	BlockingDeque -> Deque
+	LinkedBlockingDeque -> BlockingDeque	
+	
+}
+
