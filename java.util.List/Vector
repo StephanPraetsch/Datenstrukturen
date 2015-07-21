@@ -1,0 +1,16 @@
+* Like an array, it contains components that can be accessed using an integer index
+* The capacity is always at least as large as the vector size
+* the vector's storage increases in chunks the size of capacityIncrement (default 0, sonst mal 2)
+* capacityIncrement wird serialisiert
+* nutzt System.arraycopy
+* fail-fast iterators
+* is synchronized. If a thread-safe implementation is not needed, it is recommended to use ArrayList in place of Vector.
+* alle public-Methoden synchronized (außer java.util.Vector.spliterator()) => einfach, aber aufwendig / langsam
+** java.util.Collections.synchronizedList(List<T>) erstellt ein mutex (die Liste selber) => kein unterschied, oder?
+* seit JDK1.0, wurde in Collections "reingepresst", existiert nur noch wegen Abwärtskompatibilät
+
+Wann nimmt man Vector?
+Gar nicht mehr, sondern eine Liste und ggf. java.util.Collections.synchronizedList(List<T>)
+* http://stackoverflow.com/questions/1386275/why-is-java-vector-class-considered-obsolete-or-deprecated
+* http://stackoverflow.com/questions/5763838/java-6-se-are-vectors-obsolete
+* http://stackoverflow.com/questions/14932034/in-java-vector-and-collections-synchronizedlist-are-all-synchronized-whats-th
