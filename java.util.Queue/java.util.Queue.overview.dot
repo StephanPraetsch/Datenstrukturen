@@ -19,7 +19,6 @@ digraph G {
 
 	Queue -> Collection
 	Deque -> Queue
-	ConcurrentLinkDeque -> Deque
 	PriorityQueue -> Queue
 	ArrayDeque -> Deque
 	ConcurrentLinkedDeque -> Deque
