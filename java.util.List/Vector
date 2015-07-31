@@ -16,6 +16,7 @@ Gar nicht mehr, sondern eine Liste und ggf. java.util.Collections.synchronizedLi
 * http://stackoverflow.com/questions/5763838/java-6-se-are-vectors-obsolete
 * http://stackoverflow.com/questions/14932034/in-java-vector-and-collections-synchronizedlist-are-all-synchronized-whats-th
 
+TODO: Diskussion:
 
 Der einzige Vorteil einer SynchronizedList gegenüber eines Vectors ist die Trennung zwischen der Datenstruktur und der Synchronisierungsschicht.
 Bei einer SnychronizedList kann die interne Strukture(Arraylist, LinkedList, ...) entsprechend ihrer Zugriffszeiten selbst gewählt werden.
