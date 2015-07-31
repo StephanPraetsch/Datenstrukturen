@@ -1,0 +1,14 @@
+JavaDoc
+* keine null-keys/values
+* keys müssen hashCode/equals implementieren
+* initial capacity and load factor: 
+** capacity is the number of buckets
+** initial capacity is simply the capacity at the time the hash table is created, controls a tradeoff between wasted space and the need for rehash operations
+* fail-fast iterator
+* thread-safe
+* seit 1.0
+
+Wann nimmt man Hashtable?
+Gar nicht mehr.
+* Thread-safe nicht nötig, dann HashMap
+* Thread-safe, dann ConcurrentHashMap
