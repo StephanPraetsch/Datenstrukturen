@@ -1,0 +1,19 @@
+JavaDoc
+*  sorted according to the natural ordering of its keys or by a Comparator
+* a concurrent variant of SkipLists 
+** https://en.wikipedia.org/wiki/Skip_list
+** entspricht in etwa einer binären Suche
+** bei der Suche können Elemente aufgrund Verlinkung übersprungen werden (skip)
+** einfügen, suchen, löschen in O(log n))
+* thread-safe
+* weakly consistent iterators
+** reflecting the state of the map at some point at or since the creation of the iterator
+** do NOT throw ConcurrentModificationException
+** Ascending key ordered views and their iterators are faster than descending ones
+* Map.Entry methods do not support the Entry.setValue (auch entrySet nicht!)
+* size method is NOT a constant-time (Iteration über alle Element und ein valid-Check)
+* putAll, equals, toArray, containsValue, and clear are not guaranteed to be performed atomically
+* NO null (weder key noch value)
+
+Wann nimmt man ConcurrentSkipListMap?
+* wenn man eine sortierte Thread-safe Map braucht und keine null-Keys/Values hat
