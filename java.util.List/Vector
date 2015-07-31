@@ -15,3 +15,18 @@ Gar nicht mehr, sondern eine Liste und ggf. java.util.Collections.synchronizedLi
 * http://stackoverflow.com/questions/1386275/why-is-java-vector-class-considered-obsolete-or-deprecated
 * http://stackoverflow.com/questions/5763838/java-6-se-are-vectors-obsolete
 * http://stackoverflow.com/questions/14932034/in-java-vector-and-collections-synchronizedlist-are-all-synchronized-whats-th
+
+
+Der einzige Vorteil einer SynchronizedList gegenüber eines Vectors ist die Trennung zwischen der Datenstruktur und der Synchronisierungsschicht.
+Bei einer SnychronizedList kann die interne Strukture(Arraylist, LinkedList, ...) entsprechend ihrer Zugriffszeiten selbst gewählt werden.
+Sollte aber die Wahl auf eine ArrayList fallen und es besteht ein Bedarf diese Liste zu synchronisieren,
+sollte es egal sein, ob ein Vector oder Collections.synchronizedList(new ArrayList) verwendet wird.
+Ich konnte keine Quelle finden die sagt, dass ein Vector in diesem Fall langsamer wäre.
+
+Aber sowohl Vector als  auch SynchronizedList synchronisieren auch die lesenden Zugriffe und die Iteratoren sind fail fast und somit nicht ThreadSafe.
+In vielen Fällen wäre wohl die CopyOnWriteArrayList die bessere Wahl.
+Wobei viele Schreib-und wenig Lesevorgänge das Teil recht langsam machen würden.
+
+Ich würde sagen:
+* Vector ist obsolet, weil Collections.synchronizedList(new ArrayList()) das gleiche macht
+* Vector kann aber verwendet werden: wenn eine ArrayList-Struktur erforderlich ist && viele Schreibvorgänge und wenig Lesevorgänge stattfinden && man sich bewusst ist, dass der Iterator das ganze Synchronisierungzeug ein wenig aushebelt und man damit leben kann
