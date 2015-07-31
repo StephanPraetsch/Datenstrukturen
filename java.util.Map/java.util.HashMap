@@ -9,6 +9,7 @@ JavaDoc
 ** load factor is a measure of how full the hash table is allowed to get before its capacity is automatically increased
 ** When the number of entries in the hash table exceeds the product of the load factor and the current capacity, the hash table is rehashed (that is, internal data structures are rebuilt) so that the hash table has approximately twice the number of buckets.
 ** If many mappings are to be stored in a HashMap instance, creating it with a sufficiently large capacity will allow the mappings to be stored more efficiently than letting it perform automatic rehashing as needed to grow the table.
+** loadFactor default 0.75
 * not synchronized
 * fail-fast iterator
 * seit 1.2
