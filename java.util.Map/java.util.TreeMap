@@ -1,0 +1,12 @@
+JavaDoc
+* Red-Black tree
+* sorted according to the natural ordering of its keys or by a Comparator
+* guaranteed log(n) time cost for the containsKey, get, put and remove
+* must be consistent with equals: equals <=> compareTo == 0
+* nutzt compareTo anstatt equals/hashcode
+* nicht synchronized
+* fail-fast iterator
+* Map.Entry pairs returned by methods (firstEntry, lastEntry, ...) represent snapshots, do not support the Entry.setValue
+
+Wann nimmt man TreeMap?
+* wenn man eine sortierte / navigierbare Map braucht, die nicht Thread-safe ist
