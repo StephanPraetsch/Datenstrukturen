@@ -10,6 +10,7 @@
 * seit JDK1.0, wurde in Collections "reingepresst", existiert nur noch wegen Abwärtskompatibilät
 
 Wann nimmt man Vector?
+TODO noch mal genau anschauen, die Begründungen gefallen mir so nich nicht
 Gar nicht mehr, sondern eine Liste und ggf. java.util.Collections.synchronizedList(List<T>)
 * http://stackoverflow.com/questions/1386275/why-is-java-vector-class-considered-obsolete-or-deprecated
 * http://stackoverflow.com/questions/5763838/java-6-se-are-vectors-obsolete
