@@ -1,0 +1,16 @@
+JavaDoc
+* thread-safe variant of ArrayList
+* all mutative operations (add, set, and so on) are implemented by making a fresh copy of the underlying array
+* "snapshot" style iterator: this array never changes during the lifetime of the iterator
+* Element-changing operations on iterators themselves (remove, set, and add) are not supported. These methods throw UnsupportedOperationException
+* null erlaubt
+* seit 1.5
+
+* schreiben teuer, weil jedes mal ein neues array erstellt wird
+* lesen nicht teurer als in ArrayList, aber Thread-safe
+
+CopyOnWriteArrayList vs Collections.synchronizedList(new ArrayList())
+* synchronizedList synchronisiert immer, auch lesende Zugriffe
+
+Wann nimmt man CopyOnWriteArrayList?
+* wenn man einen Thread-Safe ArrayList braucht mit viel lesenden und wenig schreibenden Zugriffen
