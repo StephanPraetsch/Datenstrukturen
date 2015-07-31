@@ -11,6 +11,7 @@ JavaDoc
 
 CopyOnWriteArrayList vs Collections.synchronizedList(new ArrayList())
 * synchronizedList synchronisiert immer, auch lesende Zugriffe
+* Iterator der synchronizedList muss eigenständig  synchronisiert werden (fail fast), CopyOneWrite (fails save) siehe oben
 
 Wann nimmt man CopyOnWriteArrayList?
 * wenn man einen Thread-Safe ArrayList braucht mit viel lesenden und wenig schreibenden Zugriffen
