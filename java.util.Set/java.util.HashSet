@@ -1,1 +1,7 @@
 
+* backed durch HashMap
+* null ist erlaubt
+* reihenfolge kann sich über die Zeit ändern
+* konstante Zugriffszeiten O(1) für add, remove, contains, size (solange die HashFunktion die Elemente ordentlich über die Buckets verteilt)
+* Iterating over this set requires time proportional to the sum of the instance's size (the number of elements) plus the "capacity" of the backing HashMap instance (the number of buckets). --> initiale Größe und LoadFaktor sollten nicht zu hoch gesetzt werden
+* nicht synchronisiert +  fail fast iterator
