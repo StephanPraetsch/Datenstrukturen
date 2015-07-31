@@ -1,0 +1,6 @@
+* backed by TreeMap
+* sortiert durch Comparable oder Comarator
+* log(n) für add(), remove(), contains (TODO: sollte TreeMap entsprechen)
+* nicht threadsafe
+* fail fast iterator
+* Speicherung im balancierten Binärbaum siehe TreeMap
