@@ -1,6 +1,7 @@
 JavaDoc
 * represents a last-in-first-out (LIFO) stack: push, pop, peek, search
 * A more complete and consistent set of LIFO stack operations is provided by the Deque interface and its implementations, which should be used in preference to this class
+* seit JDK 1.0
 
 Warnn nimmt man Stack?
 Gar nicht mehr, sondern Deque.
