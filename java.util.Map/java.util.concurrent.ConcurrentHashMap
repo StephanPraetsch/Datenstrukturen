@@ -1,0 +1,16 @@
+JavaDoc
+* thread-safe
+* wie hashtable
+* retrieval operations do not entail locking
+* not any support for locking the entire table in a way that prevents all access
+* fully interoperable with Hashtable in programs that rely on its thread safety but not on its synchronization details
+* read-methoden stellen (irgend)einen Zustand dar, vielleicht auch nur die Hälfte von einem putAll
+* iterators do not throw ConcurrentModificationException
+* im Konstruktor concurrencyLevel gibt an, wie viele Threads schreibend zugreifen => optimiert die Größe
+* änderung der größe ist teuer
+* kein null erlaubt (weder key noch value)
+* ist keine spezielle HashMap, wie LinkedHashMap
+
+Wann nimmt mn ConcurrentHashMap?
+* wenn eine Thread-safe Map benötigt wird oder Hashtable verwendet wurde
+* man keine null-keys/values hat
