@@ -1,1 +1,12 @@
 
+*extends HashSet
+*backed durch LinkedHashMap()
+* Elemente werden zusätzlich druch DoubleLinkedList verbunden
+* Iteration Order = insertion order
+* erneutes Einfügen verändert nicht die InsertionOrder 
+*kann genutzt werden, um iein Set zu kopieren und seine Order dabei aufrecht zu erhalten
+*null elemente
+*O(1) für add, contains,remove
+*minimal Performceeinbussen wegen LinkdedList Verwaltung gegenüber HashSet
+* Iterieren performanter als HashSet
+* nicht thread safe +  fail fast iterator
