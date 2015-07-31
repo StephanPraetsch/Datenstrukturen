@@ -1,0 +1,17 @@
+JavaDoc
+* null keys/values erlaubt
+* wie Hashtable, aber mit nulls und nicht thread-safe
+* get/put O(1)
+* it's very important not to set the initial capacity too high (or the load factor too low) if iteration performance is important
+* konstruktor: initial capacity and load factor
+** capacity is the number of buckets
+** initial capacity is simply the capacity at the time the hash table is created
+** load factor is a measure of how full the hash table is allowed to get before its capacity is automatically increased
+** When the number of entries in the hash table exceeds the product of the load factor and the current capacity, the hash table is rehashed (that is, internal data structures are rebuilt) so that the hash table has approximately twice the number of buckets.
+** If many mappings are to be stored in a HashMap instance, creating it with a sufficiently large capacity will allow the mappings to be stored more efficiently than letting it perform automatic rehashing as needed to grow the table.
+* not synchronized
+* fail-fast iterator
+* seit 1.2
+
+Wann nimmt man HashMap?
+* Synchronisation egal, Ordnung egal, oft get/put
