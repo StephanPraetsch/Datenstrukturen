@@ -5,3 +5,6 @@
 * iterator arbeitet mit snapshots und unzerstützt keine verändernden Operationen
 * thread safe und fail fast
 ... an sich siehe CopyOnWriteArrayList
+
+TODO: Set Eigenschaft verlangt, dass das Set distinct ist
+CopyOnWriteArrayList.addIfAbsent(E e) wird genutzt ... schaut verdammt teuer aus
