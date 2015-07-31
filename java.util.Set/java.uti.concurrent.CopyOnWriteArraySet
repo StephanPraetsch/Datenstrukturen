@@ -2,6 +2,6 @@
 * nutzt CopyOnWriteArrayList
 * für kleine größe, readonly und thread safe iteratoren
 * veränderne Operationen teuer, weil das gesamte interne Array kopierte werden muss
-* iterator arbeitet mit snapshotsund unzerstützt keine verändernden Operationen
+* iterator arbeitet mit snapshots und unzerstützt keine verändernden Operationen
 * thread safe und fail fast
 ... an sich siehe CopyOnWriteArrayList
