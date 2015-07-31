@@ -1,0 +1,16 @@
+JavaDoc
+* predictable iteration order: doubly-linked list running through all of its entries
+** normally the order in which keys were inserted into the map (insertion-order)
+* special constructor to create a linked hash map whose order of iteration is the order in which its entries were last accessed, from least-recently accessed to most-recently (access-order)
+** This kind of map is well-suited to building LRU caches (last recently updated) - put / putAll / get
+** removeEldestEntry überschreiben
+* null erlaubt
+* add, contains and remove = O(1)
+* iteration = O(size), HashMap = O(capacity) , size <= capacity
+* initial capacity and load factor wie HashMap
+* not synchronized
+* fail-fast iterator
+
+Wann nimmt man LinkedHashMap?
+* Map mit Reihenfolge: insertion-order oder access-order
+* Iteration ist schneller als bei HashMap
