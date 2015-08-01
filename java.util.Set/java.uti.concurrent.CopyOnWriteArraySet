@@ -2,9 +2,14 @@
 * nutzt CopyOnWriteArrayList
 * für kleine größe, readonly und thread safe iteratoren
 * veränderne Operationen teuer, weil das gesamte interne Array kopierte werden muss
-* iterator arbeitet mit snapshots und unzerstützt keine verändernden Operationen
+* iterator arbeitet mit snapshots und unterstützt keine verändernden Operationen
 * thread safe und fail fast
-... an sich siehe CopyOnWriteArrayList
+* insertion order beim iterieren
 
-TODO: Set Eigenschaft verlangt, dass das Set distinct ist
-CopyOnWriteArrayList.addIfAbsent(E e) wird genutzt ... schaut verdammt teuer aus
+* add Funtion richtig teuer:
+  ** addIfAbsent wegen Set distinct Eigentschaft verwendet
+  ** addIFAbsent iteriert über den ganzen Snapshot und schaut, ob das Element schon drin ist
+  ** falls nicht, lockt er das aktuelle Array und vergleicht es mit seinem Snapshot,
+  sind beide verschiedenden schaut er sich die diffs an, ob das Element mittleweile von einem anderen Thread hinzugefügt wurde
+  O(n) + diffs
+  * get, contains, remove O(n) alle O(n) ???
