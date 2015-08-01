@@ -1,1 +1,11 @@
 
+* ConcurrentSkipListMap backed
+* sortiert durch Comparable/Comparator
+* log(n) contains, add,remove
+* thread save
+* atomare Abarbeitung von Bulk Operationen kann nicht garantiert werden
+* size() nicht O(1) wie bei anderen Collections, Iteriert über alle Elemente und zählt
+* kein  null
+* Iteratoren weakly consistent (nicht fail safe oder fail fast)
+* Thread safe alternative zur TreeMap
+* TODO: SkipList Datenstruktur anschauen!
