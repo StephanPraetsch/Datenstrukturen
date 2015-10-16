@@ -1,0 +1,3 @@
+* hashed mit System.identityHashCode(Object) anstatt der hashCode Implementierung
+* Referenz-Gleichheit anstatt equals
+* betrifft nur keys
