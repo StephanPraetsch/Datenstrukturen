@@ -1,0 +1,9 @@
+!! UNFERTIG !!
+
+* weak keys
+* the presence of a mapping for a given key will not prevent the key from being discarded by the garbage collector
+* When a key has been discarded its entry is effectively removed from the map
+* null key, null value supported
+* effizienz wie HashMap
+* nicht thread-safe
+* 
