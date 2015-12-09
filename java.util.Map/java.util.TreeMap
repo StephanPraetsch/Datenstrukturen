@@ -7,6 +7,7 @@ JavaDoc
 * nicht synchronized
 * fail-fast iterator
 * Map.Entry pairs returned by methods (firstEntry, lastEntry, ...) represent snapshots, do not support the Entry.setValue
+* nicht thread-safe
 
 Wann nimmt man TreeMap?
 * wenn man eine sortierte / navigierbare Map braucht, die nicht Thread-safe ist
