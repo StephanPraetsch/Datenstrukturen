@@ -3,4 +3,4 @@ LinkedList           |             |        ja          |     ja      |     ja  
 ArrayList            |             |        ja          |     ja      |     ja      |
 Vector               |     ja      |        ja          |     ja      |     ja      |
 Stack                |             |        ?           |     ja      |     ja      |
-CopyOnWriteArrayList |     ja      |      unnötig       |     ja      |     ja      |
+CopyOnWriteArrayList |     ja      |    fail-safe       |     ja      |     ja      |
