@@ -6,7 +6,7 @@ fail fast iterator
     void failFastIterator() {
         List<String> l = new ArrayList<>();
         l.add("a");
-        for (String s : l) {
+        for (String s : l) { // ConcurrentModificationException beim zweiten Aufruf
             l.add(s);
         }
     }
