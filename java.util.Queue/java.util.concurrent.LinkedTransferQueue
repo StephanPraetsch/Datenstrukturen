@@ -1,1 +1,7 @@
-
+* TransferQueue ... Sender kann auf Empfang warten
+* unbegrenzt
+* besteht aus LinkedNodes
+* size benötigt traverse
+* keine Garantie für atomate Bulk-Operationen (z.B. addALL)
+* concurrent
+* Laufzeiten?
