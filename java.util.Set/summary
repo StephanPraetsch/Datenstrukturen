@@ -1,0 +1,6 @@
+                      | Thread-Safe | fail-fast Iterator | Reihenfolge | null values |
+CopyOnWriteArraySet   |      ja     |         ja         |     ja      |      ja     |
+HashSet               |             |         ja         |             |      ja     |
+LinkedHashSet         |             |         ja         |     ja      |      ja     |
+TreeSet               |             |         ja         |     ja      |             |
+ConcurrentSkipListSet |      ja     |  weakly consistent |     ja      |             |
