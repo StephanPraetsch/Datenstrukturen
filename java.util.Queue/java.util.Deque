@@ -1,0 +1,14 @@
+deque is short for "double ended queue" and is usually pronounced "deck"
+* Methoden, die Zugriff von hinten und vorne geben
+* jede Methode gibt es zweimal: Mit und ohne Exception
+* Deque = Stack + Queue
+* alle Methoden http://docs.oracle.com/javase/7/docs/api/java/util/Deque.html
+* kein support für index-basierte Methoden, wie get(int) oder remove(int)
+* null-values sind nicht verboten, aber es wird nahe gelegt, sie zu vermeiden, weil ein null-return-value eine spezieller Rückgabewert ist für "leer"
+** Implementierungen verbieten es vielleicht sogar mit einer Exception
+
+* All Known Implementing Classes
+** ArrayDeque, ConcurrentLinkedDeque, LinkedBlockingDeque, LinkedList
+
+Wann nehmen?
+* anstatt Stack eine Deque
