@@ -1,1 +1,3 @@
-
+unbounded concurrent deque based on linked nodes
+nix null
+Iterators are weakly consistent, do not throw ConcurrentModificationException
