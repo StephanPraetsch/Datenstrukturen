@@ -8,3 +8,11 @@
  * #removeLastOccurrence removeLastOccurrence}, {@link #contains
  * contains}, {@link #iterator iterator.remove()}, and the bulk
  * operations, all of which run in linear time.
+
+* optionally-bounded blocking deque based on linked nodes
+** unbound => size = Integer.MAX_VALUE
+* alle Methoden in O(1)
+
+Wann nehmen?
+* eine nach oben beschränkte Deque
+* anscheinend generell nie verkehrt
