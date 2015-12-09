@@ -5,7 +5,7 @@ java.util.LinkedList<E>
 * operationen mit index traversieren durch die gesamte liste (beginnend vorne oder hinten)
 * nicht thread-safe
 * fail-fast iteratoren
-* lieber ArrayList nehmen http://docs.oracle.com/javase/tutorial/collections/implementations/list.html
+* TODO lieber ArrayList nehmen http://docs.oracle.com/javase/tutorial/collections/implementations/list.html
 ** Most of the time, you'll probably use ArrayList
 ** ArrayList can take advantage of System.arraycopy
 ** ArrayList is usually faster
