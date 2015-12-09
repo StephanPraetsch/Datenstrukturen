@@ -1,0 +1,11 @@
+                      | Thread-Safe | fail-fast Iterator | Reihenfolge |     null values      |
+EnumMap               |             |  weakly consistent |     ja      | keys nein, values ja |
+HashMap               |             |        ja          |             |          ja          |
+Hashtable             |     ja      |        ja          |             |                      |
+IdentityHashMap       |             |        ja          |             |          ja          |
+LinkedHashMap         |             |        ja          |     ja      |          ja          |
+Properties            |     ja      |        ja?         |             |          ja          |
+TreeMap               |             |        ja          |     ja      |          ja          |
+WeakHashMap           |             |        ja          |             |          ja          |
+ConcurrentSkipListMap |     ja      |  weakly consistent |     ja      |                      |
+ConcurrentHashMap     |     ja      |      unnötig       |             |                      |
