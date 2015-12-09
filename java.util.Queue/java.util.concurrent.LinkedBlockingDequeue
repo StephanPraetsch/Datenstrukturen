@@ -1,0 +1,10 @@
+* optional begrenzt
+* besteht aus LinkedNodes
+* concurrent
+
+ * <p>Most operations run in constant time (ignoring time spent
+ * blocking).  Exceptions include {@link #remove(Object) remove},
+ * {@link #removeFirstOccurrence removeFirstOccurrence}, {@link
+ * #removeLastOccurrence removeLastOccurrence}, {@link #contains
+ * contains}, {@link #iterator iterator.remove()}, and the bulk
+ * operations, all of which run in linear time.
