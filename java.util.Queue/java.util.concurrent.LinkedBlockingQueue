@@ -1,1 +1,10 @@
 
+* optional begrenzt
+* besteht aus LinkedNodes
+* volle queue: warten oder return false bei insert
+* consumer kann warten, bis element verfügbar
+* Laufzeiten?
+* concurrent
+
+ Linked queues typically have higher throughput than array-based queues but
+ less predictable performance in most concurrent applications
