@@ -1,0 +1,13 @@
+* keys = enum values
+* intern: arrays
+* sehr kompakt und effizient
+* Reihenfolge ist die, wie die Enums deklariert sind
+* weakly consistent iterators
+** they will never throw ConcurrentModificationException 
+** and they may or may not show the effects of any modifications to the map that occur while the iteration is in progress
+* keine null keys, aber null values erlaubt
+* nicht thread-safe
+* basic operations in O(1)
+
+Wann nehmen?
+* wenn keys enums sind
