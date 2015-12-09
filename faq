@@ -27,7 +27,7 @@ klappt: gibt [a,a] aus
         for (String s : l) {
             l.add(s);
         }
-        System.out.println("l);
+        System.out.println(l);
     }
 
 
@@ -43,5 +43,5 @@ funktioniert, ausgabe [a, aa]
         for (String s : set) {
             set.add(s + s);
         }
-        System.out.println("weakly = " + set);
+        System.out.println(set);
     }
