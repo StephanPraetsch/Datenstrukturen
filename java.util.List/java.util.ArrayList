@@ -1,4 +1,3 @@
-
 * backed by array (Object[])
 * Kapazität kann explizit durch ensureCapacity erhöht werden
 * fail fast Iterator
@@ -8,6 +7,7 @@
 * Verschieben und resizen mit System.arrycopy
 * Manipulationen (remove, add) sollten nur am Ende der Liste geschehen
 * CPU-cache friendly collection due to being backed by an array (unfortunately, not too friendly, because contains Objects, which are just pointers to the actual objects)
+* nicht thread-safe
 
 Zugriffszeiten
 
