@@ -8,4 +8,4 @@ Properties            |     ja      |        ja?         |             |        
 TreeMap               |             |        ja          |     ja      |          ja          |
 WeakHashMap           |             |        ja          |             |          ja          |
 ConcurrentSkipListMap |     ja      |  weakly consistent |     ja      |                      |
-ConcurrentHashMap     |     ja      |      unnötig       |             |                      |
+ConcurrentHashMap     |     ja      |      fail-safe     |             |                      |
