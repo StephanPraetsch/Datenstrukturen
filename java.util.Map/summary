@@ -1,4 +1,4 @@
-                      | Thread-Safe | fail-fast Iterator | Reihenfolge |     null values      |
+                      | Thread-Safe | fail-fast Iterator | Reihenfolge |     null elemente    |
 EnumMap               |             |  weakly consistent |     ja      | keys nein, values ja |
 HashMap               |             |        ja          |             |          ja          |
 Hashtable             |     ja      |        ja          |             |                      |
