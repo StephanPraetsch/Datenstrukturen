@@ -1,0 +1,6 @@
+                     | Thread-Safe | fail-fast Iterator | Reihenfolge | null values |
+LinkedList           |             |        ja          |     ja      |     ja      |
+ArrayList            |             |        ja          |     ja      |     ja      |
+Vector               |     ja      |        ja          |     ja      |     ja      |
+Stack                |             |        ?           |     ja      |     ja      |
+CopyOnWriteArrayList |     ja      |      unnötig       |     ja      |     ja      |
