@@ -1,0 +1,7 @@
+
+unbounded
+elemente können nur nach delay geholt werden
+an oberster Stelle steht das am nächsen expirende Element
+kein null
+concurrent
+separater Thread wartet auf expired des ersten Elementes
