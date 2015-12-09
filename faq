@@ -29,3 +29,14 @@ klappt: gibt [a,a] aus
 
 
 weakly consistent iterator
+Iterators returned by the collection views are weakly consistent: they will never throw ConcurrentModificationException and they may or may not show the effects of any modifications to the map that occur while the iteration is in progress.
+
+funktioniert, ausgabe [a, aa]
+    void weaklyConsistentIterator() {
+        ConcurrentSkipListSet<String> set = new ConcurrentSkipListSet<>();
+        set.add("a");
+        for (String s : set) {
+            set.add(s + s);
+        }
+        System.out.println("weakly = " + set);
+    }
