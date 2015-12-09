@@ -17,4 +17,3 @@ Nützliche Methoden
 ** List<String> list = Collections.singletonList("a");
 * java.util.Collections.synchronizedList(List<T>)
 ** wrappt eine nicht synchronisierte List
-** TODO synchronizedList(ArrayList) vs CopyOnWriteArrayList
