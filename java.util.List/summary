@@ -1,6 +1,20 @@
                      | Thread-Safe | fail-fast Iterator | Reihenfolge | null values |
+---------------------|-------------|--------------------|-------------|-------------|
 LinkedList           |             |        ja          |     ja      |     ja      |
 ArrayList            |             |        ja          |     ja      |     ja      |
 Vector               |     ja      |        ja          |     ja      |     ja      |
 Stack                |             |        ?           |     ja      |     ja      |
 CopyOnWriteArrayList |     ja      |    fail-safe       |     ja      |     ja      |
+
+Nützliche Methoden
+* com.google.common.collect.Lists.newArrayList(String...)
+** List<String> l = Lists.newArrayList("a", "b", "c", "d");
+* java.util.AbstractList.subList(int, int)
+** from-index inklusiv, to-index exklusiv
+* java.util.Collections.unmodifiableList(List<? extends T>)
+** Collections.unmodifiableList(list).add("a"); wirft UnsupportedOperationException
+* java.util.Collections.singletonList(T)
+** List<String> list = Collections.singletonList("a");
+* java.util.Collections.synchronizedList(List<T>)
+** wrappt eine nicht synchronisierte List
+** TODO synchronizedList(ArrayList) vs CopyOnWriteArrayList
