@@ -4,3 +4,4 @@
 * nicht threadsafe
 * fail fast iterator
 * Speicherung im balancierten Binärbaum siehe TreeMap
+* keine null werte
