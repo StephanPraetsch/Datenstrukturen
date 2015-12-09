@@ -1,6 +1,5 @@
-
 * ConcurrentSkipListMap backed
-* sortiert durch Comparable/Comparator
+* sortiert / Reihenfolge/ order durch Comparable/Comparator
 * log(n) contains, add,remove
 * thread save
 * atomare Abarbeitung von Bulk Operationen kann nicht garantiert werden
