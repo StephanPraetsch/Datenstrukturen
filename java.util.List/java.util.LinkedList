@@ -5,11 +5,13 @@ java.util.LinkedList<E>
 * operationen mit index traversieren durch die gesamte liste (beginnend vorne oder hinten)
 * nicht thread-safe
 * fail-fast iteratoren
-* TODO lieber ArrayList nehmen http://docs.oracle.com/javase/tutorial/collections/implementations/list.html
+* lieber ArrayList nehmen http://docs.oracle.com/javase/tutorial/collections/implementations/list.html
 ** Most of the time, you'll probably use ArrayList
+** LinkedList erzeugt pro Eintrag ein Node-Object (Overhead)
 ** ArrayList can take advantage of System.arraycopy
 ** ArrayList is usually faster
 ** ArrayList has one tuning parameter — the initial capacity
+** Löschen in der Mitte oder vorne einfügen => LinkedList
 * Deque Eigenschaften sind das herausstechenden: addFirst, getFirst, removeFirst, addLast, getLast, und removeLast
 
 Wann LinkedList?
