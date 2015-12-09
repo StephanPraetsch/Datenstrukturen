@@ -1,0 +1,4 @@
+bounded
+array-backed
+blockierend add volle Queue und get leere Queue
+concurrent
