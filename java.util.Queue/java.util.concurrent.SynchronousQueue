@@ -1,0 +1,37 @@
+* A blocking queue in which each insert operation must wait for a corresponding remove operation by another thread, and vice versa.
+* no capacity bzw size=0
+** peek geht nicht
+* an element is only present when you try to remove it
+* acts as an empty collection
+* keine null values
+* similar to rendezvous channels used in CSP and Ada.
+* well suited for handoff designs, in which an object running in one thread must sync up with an object running in another thread in order to hand it some information, event, or task.
+
+Wann nutzen
+* gar nicht?!
+
+funktioniert manchmal, aber auch nur die Kombination take() und danach put()
+        SynchronousQueue<String> sq = new SynchronousQueue<>();
+        
+        Thread put = new Thread(() -> {
+            String v = "put";
+            System.out.println("putting: " + v);
+            sq.offer(v);
+            System.out.println("put: " + v);
+        });
+
+        Thread take = new Thread(() -> {
+            try {
+                System.out.println("taking");
+                String r = sq.take();
+                System.out.println("took: " + r);
+            } catch (Exception e) {
+                System.out.println("could not take: ");
+                e.printStackTrace();
+            }
+        });
+
+        take.start();
+        put.start();
+        take.join();
+        put.join();
