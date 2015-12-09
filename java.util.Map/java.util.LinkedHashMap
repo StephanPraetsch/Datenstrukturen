@@ -8,7 +8,7 @@ JavaDoc
 * add, contains and remove = O(1)
 * iteration = O(size), HashMap = O(capacity) , size <= capacity
 * initial capacity and load factor wie HashMap
-* not synchronized
+* not synchronized, nicht thread-safe
 * fail-fast iterator
 
 Wann nimmt man LinkedHashMap?
