@@ -1,3 +1,14 @@
 * hashed mit System.identityHashCode(Object) anstatt der hashCode Implementierung
 * Referenz-Gleichheit anstatt equals
+** if (k1==k2) anstatt if (k1==null ? k2==null : k1.equals(k2)) wie bei HashMap
 * betrifft nur keys
+* verletzt bewusst den Map-Vertrag: equals() soll benutzt werden
+* null keys/values erlaubt
+* keine Reihenfolge
+* get/put in O(1)
+* expected maximum size sollte genutzt werden, erweitern ist teuer
+* nicht thread-safe
+* fail-fast iterator
+
+Wann benutzen?
+* soll nur in seltenen Fällen benutzt werden, bei denen Referenz-Gleichheit gebraucht wird
