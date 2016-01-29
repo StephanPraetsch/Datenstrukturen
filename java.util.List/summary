@@ -7,7 +7,9 @@ Stack                |             |        ?           |     ja      |     ja  
 CopyOnWriteArrayList |     ja      |    fail-safe       |     ja      |     ja      |
 
 Nützliche Methoden
-* com.google.common.collect.Lists.newArrayList(String...)
+* java.util.Collections.emptyList()
+** List<String> l = Collections.emptyList();
+* com.google.common.collect.Lists.newArrayList(T...)
 ** List<String> l = Lists.newArrayList("a", "b", "c", "d");
 * java.util.AbstractList.subList(int, int)
 ** from-index inklusiv, to-index exklusiv
