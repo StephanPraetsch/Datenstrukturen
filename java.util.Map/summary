@@ -22,3 +22,38 @@ Nützliche Methoden
 * java.util.Collections.singletonMap(K, V)
 *  Map<String, String> single = Collections.singletonMap("a", "b");
    single.put("a", "b");// UnsupportedOperationException
+
+* java.util.Map.computeIfAbsent(K, Function<? super K, ? extends V>)
+            // alt
+            Map<String, List<String>> map = new HashMap<>();
+            String k = "a";
+            String v = "a";
+            List<String> list = map.get(k);
+            if (list == null) {
+                list = new ArrayList<>();
+                map.put(k, list);
+            }
+            list.add(v);
+            System.out.println(map);
+
+            // neu
+            Map<String, List<String>> map = new HashMap<>();
+            map.computeIfAbsent("a", x -> new ArrayList<>()).add("a");
+            map.computeIfAbsent("b", x -> new ArrayList<>()).add("b");
+            map.computeIfAbsent("a", x -> new ArrayList<>()).add("aa");
+            System.out.println(map);
+
+* java.util.Map.getOrDefault(Object, V)
+            // alt
+            Map<String, String> map = new HashMap<>();
+            String s = map.get("a");
+            if (s == null) {
+                s = "default";
+            }
+            System.out.println(s);
+
+            // neu
+            Map<String, String> map = new HashMap<>();
+            map.put("a", "a");
+            System.out.println(map.getOrDefault("a", "default"));
+            System.out.println(map.getOrDefault("b", "default"));
