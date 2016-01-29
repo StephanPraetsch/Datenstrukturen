@@ -9,3 +9,16 @@ TreeMap               |             |        ja          |     ja      |        
 WeakHashMap           |             |        ja          |             |          ja          |
 ConcurrentSkipListMap |     ja      |  weakly consistent |     ja      |                      |
 ConcurrentHashMap     |     ja      |      fail-safe     |             |                      |
+
+Nützliche Methoden
+* java.util.Collections.synchronizedMap(Map<K, V>)
+** Map<String, String> synchronizedMap = Collections.synchronizedMap(map);
+* java.util.Collections.unmodifiableMap(Map<? extends K, ? extends V>)
+** Map<String, String> unmodifiableMap = Collections.unmodifiableMap(map);
+   unmodifiableMap.put("a", "b"); // UnsupportedOperationException
+* java.util.Collections.emptyMap()
+** Map<String, String> empty = Collections.emptyMap();
+   empty.put("a", "b");// UnsupportedOperationException
+* java.util.Collections.singletonMap(K, V)
+*  Map<String, String> single = Collections.singletonMap("a", "b");
+   single.put("a", "b");// UnsupportedOperationException
