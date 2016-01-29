@@ -6,10 +6,10 @@ java.util.LinkedList<E>
 * nicht thread-safe
 * fail-fast iteratoren
 * lieber ArrayList nehmen http://docs.oracle.com/javase/tutorial/collections/implementations/list.html
-** Most of the time, you'll probably use ArrayList
+** Most of the time, you'll probably use ArrayList, which offers constant-time positional access and is just plain fast
+** If you think you want to use a LinkedList, measure the performance of your application with both LinkedList and ArrayList before making your choice; ArrayList is usually faster.
 ** LinkedList erzeugt pro Eintrag ein Node-Object (Overhead)
 ** ArrayList can take advantage of System.arraycopy
-** ArrayList is usually faster
 ** ArrayList has one tuning parameter — the initial capacity
 ** Löschen in der Mitte oder vorne einfügen => LinkedList
 * Deque Eigenschaften sind das herausstechenden: addFirst, getFirst, removeFirst, addLast, getLast, und removeLast
