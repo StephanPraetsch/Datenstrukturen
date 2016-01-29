@@ -34,7 +34,10 @@ klappt: gibt [a,a] aus
 ------------------------------
 | weakly consistent iterator |
 ------------------------------
-Iterators returned by the collection views are weakly consistent: they will never throw ConcurrentModificationException and they may or may not show the effects of any modifications to the map that occur while the iteration is in progress.
+Iterators returned by the collection views are weakly consistent: 
+they will never throw ConcurrentModificationException 
+and they may or may not show the effects of any modifications to the map 
+that occur while the iteration is in progress.
 
 funktioniert, ausgabe [a, aa]
     void weaklyConsistentIterator() {
