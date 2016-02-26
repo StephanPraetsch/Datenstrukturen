@@ -1,0 +1,9 @@
+* Collections.disjoint(Collection, Collection)
+** ob beide Collecltions keine gemeinsamen Elemente haben
+** mit Vorischt zu genießen: Es gibt etliche Fallstricke, siehe Doku
+
+* Collections.max / min , optional mit Comparator
+
+* Collections.shuffle
+
+* Collections.sort
