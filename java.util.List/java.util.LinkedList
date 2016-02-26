@@ -13,10 +13,11 @@ java.util.LinkedList<E>
 ** ArrayList has one tuning parameter — the initial capacity
 ** Löschen in der Mitte oder vorne einfügen => LinkedList
 * Deque Eigenschaften sind das herausstechenden: addFirst, getFirst, removeFirst, addLast, getLast, und removeLast
+* You need to use ListIterators if you want to try to write fast LinkedList code
+* If you want a Queue/Deque implementation us ArrayDeque instead
 
 Wann LinkedList?
-Wenn man die Liste als Deque benutzt.
-Wenn oft remove(Object) genutzt wird (schneller als ArrayList.remove(Object))
+Wenn sehr oft remove(Object) genutzt wird (schneller als ArrayList.remove(Object))
 
 
 Laufzeiten:
