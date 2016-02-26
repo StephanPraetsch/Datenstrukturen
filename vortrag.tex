@@ -1,0 +1,70 @@
+\documentclass{beamer}
+
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{german}
+
+% paar Farben fuer listings
+\usepackage{color}
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+% quellcode
+\usepackage{listings}
+\lstset{language=Java,
+basicstyle=\ttfamily\tiny,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+numbers=none,
+numberstyle=\tiny\color{black},
+stepnumber=2,
+numbersep=10pt,
+tabsize=4,
+showspaces=false,
+showstringspaces=false,
+showtabs=false,
+}
+
+% sections als zwischenseite mit titel
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+\usetheme{Boadilla}
+\usecolortheme[named=red]{structure}
+
+\beamertemplatenavigationsymbolsempty
+
+\begin{document}
+
+\title{Datenstrukturen in Java}
+\subtitle{Datenstrukturen und Algorithmen im JDK}
+\author{Andreas Klipp,\, \\Stephan Prätsch}
+\institute{}
+\date{\today} 
+\logo{\includegraphics[width=1cm]{logo_mercateo}}
+\titlegraphic{\includegraphics[width=2cm]{logo_mercateo}}
+
+\frame{\titlepage}
+\frame{\frametitle{Inhaltsverzeichnis}\tableofcontents} 
+
+\input{intro.tex}
+\input{java.util.List/list.tex}
+\input{java.util.Map/map.tex}
+\input{java.util.Queue/queue.tex}
+\input{java.util.Set/set.tex}
+\input{utilities.tex}
+\input{outro.tex}
+
+\end{document}
