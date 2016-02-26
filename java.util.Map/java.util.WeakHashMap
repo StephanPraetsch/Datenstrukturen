@@ -8,4 +8,7 @@
 * effizienz wie HashMap
 * nicht thread-safe
 * fail-fast iterator
-* primarily for use with key objects whose equals methods test for object identity using the == operator.
+* primarily for use with key objects whose equals methods test for object identity using the == operator
+
+Wann verwenden?
+* object reference als key und GC soll die Map beaufsichtigen - also sehr selten
