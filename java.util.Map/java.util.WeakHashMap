@@ -12,3 +12,4 @@
 
 Wann verwenden?
 * object reference als key und GC soll die Map beaufsichtigen - also sehr selten
+* data cache implementations
