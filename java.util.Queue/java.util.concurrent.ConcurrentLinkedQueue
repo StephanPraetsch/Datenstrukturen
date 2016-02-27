@@ -1,7 +1,7 @@
 
 An unbounded thread-safe queue based on linked nodes.
 keine null-Elemente, wie die meisten anderen ConncurrentCollectins
-schwach konsistente Konstruktoren, werfen keine ConcurrentModificationException
+schwach konsistente iteratoren, werfen keine ConcurrentModificationException
 size benötigt traversal
  the bulk operations addAll, removeAll, retainAll, containsAll, equals, and toArray are not guaranteed to be performed atomicall
  O(1) für FIFO-Operationen
