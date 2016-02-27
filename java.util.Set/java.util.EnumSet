@@ -1,5 +1,5 @@
 Alle Elemente müssen vom gleichen EnumType sein
-JumboEnumSet/RegularEnumSet
+JumboEnumSet(>64 Elemente)/RegularEnumSet
 Erstellung per static EnumSet.of(...)
 kompakt und effizient
 natural order / order der Konstantendeklaration
