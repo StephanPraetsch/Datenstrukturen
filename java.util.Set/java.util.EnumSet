@@ -1,0 +1,9 @@
+Alle Elemente müssen vom gleichen EnumType sein
+JumboEnumSet/RegularEnumSet
+Erstellung per static EnumSet.of(...)
+kompakt und effizient
+natural order / order der Konstantendeklaration
+iterator weakly consistent
+keine null elemente
+basic operationen in konstanter zeit, i.d.R. schneller als HashSet Counterparts
+auch BulkOperationen in konstanter Zeit
