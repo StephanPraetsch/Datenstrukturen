@@ -16,3 +16,4 @@ ArrayBlockingQueue    |     ja      |  weakly-consistent |  insertion  |     nei
 Überlegunden:
 blockierende Queues bieten zusätzlich auch immer nicht blockierende Methoden an
 Iteration PriorityQueue nicht geordnet !
+LinkedList hier zeigen?
