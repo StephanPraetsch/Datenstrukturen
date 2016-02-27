@@ -1,6 +1,10 @@
                       | Thread-Safe | fail-fast Iterator | Reihenfolge | null values |
-CopyOnWriteArraySet   |      ja     |         ja         |     ja      |      ja     |
+CopyOnWriteArraySet   |      ja     |         ja         |  insertion  |      ja     |
 HashSet               |             |         ja         |             |      ja     |
-LinkedHashSet         |             |         ja         |     ja      |      ja     |
-TreeSet               |             |         ja         |     ja      |             |
-ConcurrentSkipListSet |      ja     |  weakly consistent |     ja      |             |
+LinkedHashSet         |             |         ja         |  insertion  |      ja     |
+TreeSet               |             |         ja         |  compare    |             |
+ConcurrentSkipListSet |      ja     |  weakly consistent |  compare    |             |
+EnumSet               |             |  weakly consistent |  natural    |             |
+
+EnumSet natural = deklaration order
+EnumSet Abstract --> RegularEnumSet/JumboEnumSet per EnumSet.of()
