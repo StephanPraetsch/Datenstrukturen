@@ -1,14 +1,16 @@
                       | Thread-Safe | fail-fast Iterator | Reihenfolge |     null elemente    |
-EnumMap               |             |  weakly consistent |     ja      | keys nein, values ja |
+EnumMap               |             |  weakly consistent |  natural    | keys nein, values ja |
 HashMap               |             |        ja          |             |          ja          |
 Hashtable             |     ja      |        ja          |             |                      |
 IdentityHashMap       |             |        ja          |             |          ja          |
-LinkedHashMap         |             |        ja          |     ja      |          ja          |
-Properties            |     ja      |        ja?         |             |          ja          |
-TreeMap               |             |        ja          |     ja      |          ja          |
+LinkedHashMap         |             |        ja          | insertion   |          ja          |
+Properties            |     ja      |        ja          |             |          ja          |
+TreeMap               |             |        ja          |   compare   |          ja          |
 WeakHashMap           |             |        ja          |             |          ja          |
-ConcurrentSkipListMap |     ja      |  weakly consistent |     ja      |                      |
+ConcurrentSkipListMap |     ja      |  weakly consistent |   compare   |                      |
 ConcurrentHashMap     |     ja      |      fail-safe     |             |                      |
+
+EnumMap natural = constants declaration order
 
 Nützliche Methoden
 * java.util.Collections.synchronizedMap(Map<K, V>)
