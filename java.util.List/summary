@@ -1,10 +1,10 @@
                      | Thread-Safe | fail-fast Iterator | Reihenfolge | null values |
 ---------------------|-------------|--------------------|-------------|-------------|
-LinkedList           |             |        ja          |     ja      |     ja      |
-ArrayList            |             |        ja          |     ja      |     ja      |
-Vector               |     ja      |        ja          |     ja      |     ja      |
-Stack                |             |        ?           |     ja      |     ja      |
-CopyOnWriteArrayList |     ja      |    fail-safe       |     ja      |     ja      |
+LinkedList           |             |        ja          | insertion   |     ja      |
+ArrayList            |             |        ja          | insertion   |     ja      |
+Vector               |     ja      |        ja          | insertion   |     ja      |
+Stack                |             |        ja          | insertion   |     ja      |
+CopyOnWriteArrayList |     ja      |    fail-safe       | insertion   |     ja      |
 
 Nützliche Methoden
 * java.util.Collections.emptyList()
