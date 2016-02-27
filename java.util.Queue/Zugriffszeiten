@@ -1,0 +1,18 @@
+                      |   offer  |   peek 	|   poll   |   size   |
+----------------------|----------|----------|----------|----------|
+SynchronousQueue      |   O(1)   |     -    |   O(1)   |    -     |
+PriorityBlockingQueue | O(log n) |   O(1)   | O(log n) |   O(1)   |
+PriorityQueue         | O(log n) |   O(1)   | O(log n) |   O(1)   |
+LinkedBlockingQueue   |   O(1)   |   O(1)   |   O(1)   |   O(1)   |
+LinkedTransferQueue   |   O(1)?  |   O(1)?  |   O(1)?  |   O(n)   |
+ConcurrentLinkedQueue |   O(1)   |   O(1)   |   O(1)   |   O(n)   |
+DelayQueue			      | O(log n) |   O(1)   | O(log n) |   O(1)   |
+LinkedBlockingDeque   |   O(1)   |   O(1)   |   O(1)   |   O(1)   |
+ConcurrentLinkedDeque |   O(1)?  |   O(1)?  |   O(1)?  |   O(n)   |
+ArrayDeque			      |   O(1)   |   O(1)   |   O(1)   |   O(1)   |
+ArrayBlockingQueue    |   O(1)   |   O(1)   |   O(1)   |   O(1)   |
+LinkedList			      |   O(1)   |   O(1)   |   O(1)   |   O(1)   |
+
+Auch deque-getLast zeigen ?
+
+Laufzeitbetrachtungen für SynchronousQueue hinfällig, da keine Kapazität
