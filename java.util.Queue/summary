@@ -1,15 +1,15 @@
                       | Thread-Safe | fail-fast Iterator | Reihenfolge | null values |  bounded  | blockend |
 ----------------------|-------------|--------------------|-------------|-------------|---------------------
-SynchronousQueue      |     ja      |  			-	 	         |    -		     |     nein    |	 ja   	 | add/get
-PriorityBlockingQueue |     ja      |  weakly-consistent |  compare    |     nein    |	nein	   | get 
-PriorityQueue         |     nein    |  fail-fast		     |  compare    |     nein    |	nein	   | nein
+SynchronousQueue      |     ja      |  			-	 	 |    -		   |     nein    |	 ja   	 | add/get
+PriorityBlockingQueue |     ja      |  weakly-consistent |  compare    |     nein    |	nein	 | get 
+PriorityQueue         |     nein    |  fail-fast		 |  compare    |     nein    |	nein	 | nein
 LinkedBlockingQueue   |     ja      |  weakly-consistent |  insertion  |     nein    |	optional | add/get
-LinkedTransferQueue   |     ja      |  weakly-consistent |  insertion  |     nein    |	nein	   | transfer/get
-ConcurrentLinkedQueue |     ja      |  weakly-consistent |  insertion  |     nein    |	nein	   | nein
-DelayQueue			      |     ja      |  weakly-consistent |  insertion  |     nein    |	nein	   | get
-LinkedBlockingDeque   |     ja      |  fail-fast		     |  insertion  |     nein    |	optional | add/get
-ConcurrentLinkedDeque |     ja      |  weakly-consistent |  insertion  |     nein    |	nein	   | nein
-ArrayDeque			      |     nein    |  fail-fast 		     |  insertion  |     nein    |	nein     | nein
+LinkedTransferQueue   |     ja      |  weakly-consistent |  insertion  |     nein    |	nein	 | transfer/get
+ConcurrentLinkedQueue |     ja      |  weakly-consistent |  insertion  |     nein    |	nein	 | nein
+DelayQueue			  |     ja      |  weakly-consistent |  insertion  |     nein    |	nein	 | get
+LinkedBlockingDeque   |     ja      |  fail-fast		 |  insertion  |     nein    |	optional | add/get
+ConcurrentLinkedDeque |     ja      |  weakly-consistent |  insertion  |     nein    |	nein	 | nein
+ArrayDeque			  |     nein    |  fail-fast 		 |  insertion  |     nein    |	nein     | nein
 ArrayBlockingQueue    |     ja      |  weakly-consistent |  insertion  |     nein    |	ja	     | add/get
 
 
