@@ -1,0 +1,11 @@
+                      |   add    | contains	|  remove  |  size    |
+----------------------|----------|----------|----------|----------|
+CopyOnWriteArraySet   |   O(n)   |   O(n)   |   O(n)?  |   O(n)?  |
+HashSet 			        |   O(1)   |   O(1)   |   O(1)   |   O(1)   |
+LinkedHashSet         |   O(1)   |   O(1)   |   O(1)   |   O(1)   |
+TreeSet   			      | O(log n) | O(log n) | O(log n) | O(log n)?|
+ConcurrentSkipListSet | O(log n) | O(log n) | O(log n  |   O(n)   |
+EnumSet				        |   O(1)   |   O(1)   |   O(1)   |   O(1)   |
+
+Laufzeiten für next zeigen siehe Quelle?
+JumboEnumSet andere Laufzeiten?
