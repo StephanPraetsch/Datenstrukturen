@@ -1,0 +1,18 @@
+                      |   get    |   put    | containsKey |  remove  |  size   |
+----------------------|----------|----------|-------------|----------|----------
+EnumMap               |   O(1)   |   O(1)   |     O(1)    |   O(1)   |   O(1)  |
+HashMap               |   O(1)   |   O(1)   |     O(1)    |   O(1)   |   O(1)  |
+IdentityHashMap       |   O(1)   |   O(1)   |     O(1)    |   O(1)   |   O(1)  |
+LinkedHashMap         |   O(1)   |   O(1)   |     O(1)    |   O(1)   |   O(1)  |
+HashTable             |   O(1)   |   O(1)   |     O(1)    |   O(1)   |   O(1)  |
+Properties            |   O(1)   |   O(1)   |     O(1)    |   O(1)   |   O(1)  |
+TreeMap               | O(log n) | O(log n) |   O(log n)  | O(log n) |   O(1)  |
+WeakHashMap           |   O(1)   |   O(1)   |     O(1)    |   O(1)   |   O(1)  |
+ConcurrentHashMap     |   O(1)   |   O(1)   |     O(1)    |   O(1)   |   O(1)  |
+ConcurrentSkipListMap | O(log n) | O(log n) |   O(log n)  | O(log n) |   O(n)  |
+
+
+vgl.Quelle, next fehlt, remove/add/size zusätzlich
+Hash-basierter Strukturen unter Annahme keine Key-Kollisionen
+size ConcurrentHashMap teuer, da iteration über die segmente
+WeakHashMap.size = O(1) + nrStaleEntries
