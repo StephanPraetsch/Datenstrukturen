@@ -3,7 +3,7 @@
 * für kleine größe, readonly und thread safe iteratoren
 * veränderne Operationen teuer, weil das gesamte interne Array kopierte werden muss
 * iterator arbeitet mit snapshots und unterstützt keine verändernden Operationen
-* thread safe und fail fast
+* thread safe und fail safe (laut http://www.javamadesoeasy.com/2015/04/copyonwritearrayset-fail-safe-or-fail.html)
 * insertion order beim iterieren
 
 * add Funtion richtig teuer:
