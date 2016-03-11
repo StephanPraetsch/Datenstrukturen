@@ -31,11 +31,11 @@
 \begin{center}
   \begin{tabular}{l|l}
   Operation        & Laufzeit \\\hline
-  add              & O(1) / O(n) mit re-size \\
+  add              & \O{1} / \O{n} mit re-size \\
   add(int, Object) & je kleiner die Posistion, desto länger \\
-  remove(Object)   & O(n) TODO so viel wegen shifting? was ist shifting? \\
-  remove(int)      & O(n) wegen shifting \\
-  get              & O(1)
+  remove(Object)   & \O{n} TODO so viel wegen shifting? was ist shifting? \\
+  remove(int)      & \O{n} wegen shifting \\
+  get              & \O{1}
   \end{tabular}
 \end{center}
 }
@@ -81,7 +81,7 @@
   \begin{itemize}[<+->]
     \item double linked
     \item null Elemente erlaubt
-    \item Operationen mit Index O(n): Traversierung durch gesamte Liste, vorn oder hinten beginnend
+    \item Operationen mit Index \O{n}: Traversierung durch gesamte Liste, vorn oder hinten beginnend
     \item nicht thread-safe
     \item fail fast Iterator
     \item Deque Eigenschaften sind herausstechend: addFirst, getFirst, removeFirst, addLast, getLast und removeLast
@@ -94,10 +94,10 @@
 \begin{center}
   \begin{tabular}{l|l}
   Operation        & Laufzeit \\\hline
-  add              & O(1) \\
-  remove(Object)   & O(1) \\
-  remove(int)      & O(n) \\
-  get              & O(n)
+  add              & \O{1} \\
+  remove(Object)   & \O{1} \\
+  remove(int)      & \O{n} \\
+  get              & \O{n}
   \end{tabular}
 \end{center}
 }
