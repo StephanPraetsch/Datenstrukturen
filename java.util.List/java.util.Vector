@@ -30,7 +30,8 @@ Wobei viele Schreib-und wenig Lesevorgänge das Teil recht langsam machen würde
 
 Ich würde sagen:
 * Vector ist obsolet, weil Collections.synchronizedList(new ArrayList()) das gleiche macht
-* Vector kann aber verwendet werden: wenn eine ArrayList-Struktur erforderlich ist && viele Schreibvorgänge und wenig Lesevorgänge stattfinden && man sich bewusst ist, dass der Iterator das ganze Synchronisierungzeug ein wenig aushebelt und man damit leben kann
+* Vector kann aber verwendet werden: wenn eine ArrayList-Struktur erforderlich ist && viele Schreibvorgänge und wenig Lesevorgänge stattfinden &&
+  man sich bewusst ist, dass der Iterator das ganze Synchronisierungzeug ein wenig aushebelt und man damit leben kann
 
 *edit: Wobei sich viele schreibende und wenig lesende Zugriffe stärker nach LinkedList und weniger nach ArrayList anhören.
 Lass uns mal versuchen ein Bsp. zu suchen, dass alle Anforderungen die ich oben aufgezählt hat erfüllt.
