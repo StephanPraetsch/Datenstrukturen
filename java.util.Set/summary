@@ -1,5 +1,5 @@
                       | Thread-Safe | fail-fast Iterator | Reihenfolge | null values |
-CopyOnWriteArraySet   |      ja     |         ja         |  insertion  |      ja     |
+CopyOnWriteArraySet   |      ja     |        safe        |  insertion  |      ja     |
 HashSet               |             |         ja         |             |      ja     |
 LinkedHashSet         |             |         ja         |  insertion  |      ja     |
 TreeSet               |             |         ja         |  compare    |             |
