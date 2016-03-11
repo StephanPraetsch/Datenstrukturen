@@ -167,7 +167,7 @@ Aber \href{http://java-performance.info/java-collections-overview/}{Java Perform
     \item seit JDK 1.0
     \item wie ein Array (bzw. ArrayList)
     \item thread-safe
-    \item alle public Methoden synchonized: einfach, deshalb langsam
+    \item alle public Methoden synchronized: einfach, deshalb langsam
     \item fail-fast Iterator
   \end{itemize}
 \end{center}
@@ -190,4 +190,14 @@ Aber \href{http://java-performance.info/java-collections-overview/}{Java Perform
 
 \frame{
 \frametitle{List - Übersicht}
+\begin{center}
+  \begin{tabular}{l|c|c|c|c}
+                       & thread-safe &  Iterator & Reihenfolge & null value \\\hline
+  LinkedList           &             & fail-fast &  insertion  &   erlaubt  \\
+  ArrayList            &             & fail-fast &  insertion  &   erlaubt  \\
+  Vector               &      ja     & fail-fast &  insertion  &   erlaubt  \\
+  Stack                &             & fail-fast &  insertion  &   erlaubt  \\
+  CopyOnWriteArrayList &      ja     & fail-safe &  insertion  &   erlaubt  \\
+  \end{tabular}
+\end{center}
 }
