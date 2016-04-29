@@ -338,7 +338,7 @@
 
 \frame{\frametitle{TreeMap - Wann nehmen?}
 \begin{center}
-  wenn man eine sortierte / navigierbare Map braucht, die nicht Thread-safe ist
+  wenn man eine sortierte / navigierbare Map braucht, die nicht thread-safe ist
 \end{center}
 }
 
@@ -351,8 +351,26 @@
 \frametitle{ConcurrentSkipListMap}
 \begin{center}
   \begin{itemize}[<+->]
-    \item ...
+    \item Reihenfolge: Natürliche Ordnung oder Comparator
+    \item concurrent variant von SkipLists \\
+	  \href{https://en.wikipedia.org/wiki/Skip_list}{Wikipedia SkipList} \\
+	  entspricht in etwa einer binären Suche
+	  bei der Suche können Elemente aufgrund Verlinkung übersprungen werden (skip) \\
+	  einfügen, suchen, löschen in O(log n))
+    \item thread-safe
+    \item weakly consistent iterators
+    \item aufsteigende Iteration ist schneller als absteigende
+    \item Map.Entry Methoden unterstützen kein Entry.setValue (auch entrySet nicht)
+    \item size-Methode ist nicht in konstanter Zeit: Iteration über alle Element und ein valid-Check
+    \item putAll, equals, toArray, containsValue, und clear sind nicht zwingend atomar
+    \item weder null key noch null value
   \end{itemize}
+\end{center}
+}
+
+\frame{\frametitle{ConcurrentSkipListMap - Wann nehmen?}
+\begin{center}
+  wenn man eine sortierte / navigierbare Map braucht, die thread-safe ist und man keine null-Keys/Values hat
 \end{center}
 }
 
@@ -375,7 +393,7 @@
   Properties            &      ja     & fail-fast &                      & weder key noch value   \\
   EnumMap               &     nein    &   weakly  &    wie das Enum      &        values          \\
   TreeMap               &     nein    & fail-fast & natural / Comparator & values oder Comparator \\
-  ConcurrentSkipListMap &             &           &                      &                        \\
+  ConcurrentSkipListMap &      ja     &   weakly  & natural / Comparator & weder key noch value   \\
   \end{tabular}
 \end{center}
 }
