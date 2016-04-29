@@ -55,12 +55,69 @@
 \end{center}
 }
 
+
+\frame{
+\frametitle{LinkedHashMap}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item null erlaubt
+    \item add, contains, remove \O{1}
+    \item iteration = \O{size}, HashMap = \O{capacity}, schneller falls $size < capacity$
+    \item initial capacity and load factor wie HashMap
+    \item not synchronized, nicht thread-safe
+    \item fail-fast iterator
+    \item Reihenfolge nach Einfügen (insertion-order)
+  \end{itemize}
+\end{center}
+}
+
+\begin{frame}[fragile]
+\frametitle{LinkedHashMap - LRU-Cache}
+  \begin{block}{Least Recently Used}
+    \begin{enumerate}[<+->]
+      \item \textit{new LinkedHashMap(initialCapacity, loadFactor, accessOrder)} \\
+	    accessOrder = true für access-order, von least nach most-recently \\
+      \item um nach put / putAll zu aktualisieren removeEldestEntry überschreiben
+	  \begin{lstlisting}
+     @Override
+     protected boolean removeEldestEntry(Map.Entry eldest) {
+        return size() > 100;
+     }
+	  \end{lstlisting}
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+\frame{
+\frametitle{LinkedHashMap - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        & Laufzeit \\\hline
+  add              & \O{1} \\
+  contains         & \O{1} \\
+  remove           & \O{1} \\
+  get              & \O{?} \\
+  put              & \O{?} \\
+  \end{tabular}
+\end{center}
+}
+
+\frame{
+\frametitle{LinkedHashMap - Wann nehmen?}
+\begin{center}
+  Reihenfolge wichtig oder \\\pause
+  schnelle Iteration (schneller als HashMap)
+\end{center}
+}
+
+
 \frame{
 \frametitle{Map - Übersicht}
 \begin{center}
   \begin{tabular}{l|c|c|c|c}
-                       & thread-safe &  Iterator & Reihenfolge & null value \\\hline
-  HashMap              &     nein    & fail-fast &             &   erlaubt  \\
+                       & thread-safe &  Iterator &    Reihenfolge     & null value \\\hline
+  HashMap              &     nein    & fail-fast &                    &   erlaubt  \\
+  LinkedHashMap        &     nein    & fail-fast & insertion / access &   erlaubt  \\
   \end{tabular}
 \end{center}
 }
