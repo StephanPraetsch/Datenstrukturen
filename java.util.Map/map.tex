@@ -173,8 +173,7 @@
 \end{center}
 }
 
-\frame{
-\frametitle{IdentityHashMap - Wann nehmen?}
+\frame{\frametitle{IdentityHashMap - Wann nehmen?}
 \begin{center}
   object reference als key und GC soll die Map beaufsichtigen (also sehr selten) \\\pause
   data cache implementations
@@ -190,8 +189,26 @@
 \frametitle{ConcurrentHashMap}
 \begin{center}
   \begin{itemize}[<+->]
-    \item ...
+    \item ist keine spezielle HashMap, wie LinkedHashMap
+    \item ist wie Hashtable (bspw. thread-safe)
+    \item lesende Operationen blockieren nicht
+    \item jeglichen Zugriff blockieren ist nicht möglich
+    \item kann Hashtable komplett ersetzen, falls man nur auf thread-safety angewiesen ist, nicht auf die Synchronisations-Details von Hashtable
+    \item read-Methoden stellen (irgend)einen Zustand dar, vielleicht auch nur die Hälfte von einem putAll
+    \item fail-safe iterator
+    \item Änderung der Größe ist teuer
+    \item Größe optimieren: Konstruktor-Parameter concurrencyLevel gibt Anzahl parallel schreibender Threads an
+    \item kein null erlaubt (weder key noch value)
   \end{itemize}
+\end{center}
+}
+
+
+\frame{\frametitle{ConcurrentHashMap - Wann nehmen?}
+\begin{center}
+  wenn eine thread-safe Map benötigt wird oder \\\pause
+  Hashtable ersetzt werden soll oder \\\pause
+  fail-safe Iterator
 \end{center}
 }
 
@@ -274,17 +291,17 @@
 \frametitle{Map - Übersicht}
 \begin{center}
   \begin{tabular}{l|c|c|c|c}
-                        & thread-safe &  Iterator &    Reihenfolge     & null value \\\hline
-  HashMap               &     nein    & fail-fast &                    &   erlaubt  \\
-  LinkedHashMap         &     nein    & fail-fast & insertion / access &   erlaubt  \\
-  IdentityHashMap       &     nein    & fail-fast &                    &   erlaubt  \\
-  WeakHashMap           &             &           &                    &            \\
-  ConcurrentHashMap     &             &           &                    &            \\
-  EnumMap               &             &           &                    &            \\
-  Hashtable             &             &           &                    &            \\
-  Properties            &             &           &                    &            \\
-  TreeMap               &             &           &                    &            \\
-  ConcurrentSkipListMap &             &           &                    &            \\
+                        & thread-safe &  Iterator &    Reihenfolge     &      null value      \\\hline
+  HashMap               &     nein    & fail-fast &                    &        erlaubt       \\
+  LinkedHashMap         &     nein    & fail-fast & insertion / access &        erlaubt       \\
+  IdentityHashMap       &     nein    & fail-fast &                    &        erlaubt       \\
+  WeakHashMap           &     nein    & fail-fast &                    &        erlaubt       \\
+  ConcurrentHashMap     &      ja     & fail-safe &                    & weder key noch value \\
+  EnumMap               &             &           &                    &                      \\
+  Hashtable             &             &           &                    &                      \\
+  Properties            &             &           &                    &                      \\
+  TreeMap               &             &           &                    &                      \\
+  ConcurrentSkipListMap &             &           &                    &                      \\
   \end{tabular}
 \end{center}
 }
