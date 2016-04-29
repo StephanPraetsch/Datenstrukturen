@@ -97,8 +97,7 @@
   \end{block}
 \end{frame}
 
-\frame{
-\frametitle{LinkedHashMap - Zugriffszeiten}
+\frame{\frametitle{LinkedHashMap - Zugriffszeiten}
 \begin{center}
   \begin{tabular}{l|l}
   Operation        & Laufzeit \\\hline
@@ -310,8 +309,36 @@
 \frametitle{TreeMap}
 \begin{center}
   \begin{itemize}[<+->]
-    \item ...
+    \item fail-fast iterator
+    \item nicht thread-safe
+    \item nutzt compareTo anstatt equals/hashcode
+    \item intern Red-Black-Tree
+    \item Reihenfolge: Natürliche Ordnung oder Comparator
+    \item containsKey, get, put and remove in \O{log(n)}
+    \item equals und compareTo müssen konsistent sein \\
+	  $equals \Leftrightarrow compareTo == 0$
+    \item Map.Entry Paar (von firstEntry, lastEntry, ...) ist Snapshot, Entry.setValue ist nicht möglich
   \end{itemize}
+\end{center}
+}
+
+\frame{\frametitle{TreeMap - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        & Laufzeit  \\ \hline
+  add              & \O{TODO}  \\
+  contains         & \O{TODO}  \\
+  containsKey      & \O{log(n)} \\
+  remove           & \O{log(n)} \\
+  get              & \O{log(n)} \\
+  put              & \O{log(n)} \\
+  \end{tabular}
+\end{center}
+}
+
+\frame{\frametitle{TreeMap - Wann nehmen?}
+\begin{center}
+  wenn man eine sortierte / navigierbare Map braucht, die nicht Thread-safe ist
 \end{center}
 }
 
@@ -338,17 +365,17 @@
 \frametitle{Map - Übersicht}
 \begin{center}
   \begin{tabular}{l|c|c|c|c}
-                        & thread-safe &  Iterator &    Reihenfolge     &      null value      \\\hline
-  HashMap               &     nein    & fail-fast &                    &        erlaubt       \\
-  LinkedHashMap         &     nein    & fail-fast & insertion / access &        erlaubt       \\
-  IdentityHashMap       &     nein    & fail-fast &                    &        erlaubt       \\
-  WeakHashMap           &     nein    & fail-fast &                    &        erlaubt       \\
-  ConcurrentHashMap     &      ja     & fail-safe &                    & weder key noch value \\
-  Hashtable             &      ja     & fail-fast &                    & weder key noch value \\
-  Properties            &      ja     & fail-fast &                    & weder key noch value \\
-  EnumMap               &     nein    &   weakly  &    wie das Enum    &        values        \\
-  TreeMap               &             &           &                    &                      \\
-  ConcurrentSkipListMap &             &           &                    &                      \\
+                        & thread-safe &  Iterator &    Reihenfolge       &      null value        \\ \hline
+  HashMap               &     nein    & fail-fast &                      &        erlaubt         \\
+  LinkedHashMap         &     nein    & fail-fast & insertion / access   &        erlaubt         \\
+  IdentityHashMap       &     nein    & fail-fast &                      &        erlaubt         \\
+  WeakHashMap           &     nein    & fail-fast &                      &        erlaubt         \\
+  ConcurrentHashMap     &      ja     & fail-safe &                      & weder key noch value   \\
+  Hashtable             &      ja     & fail-fast &                      & weder key noch value   \\
+  Properties            &      ja     & fail-fast &                      & weder key noch value   \\
+  EnumMap               &     nein    &   weakly  &    wie das Enum      &        values          \\
+  TreeMap               &     nein    & fail-fast & natural / Comparator & values oder Comparator \\
+  ConcurrentSkipListMap &             &           &                      &                        \\
   \end{tabular}
 \end{center}
 }
