@@ -235,20 +235,42 @@
 \begin{center}
   \textbf{Gar nicht mehr} \\\pause
   Wenn thread-safe nicht nötig, dann \textbf{HashMap} \\
-  Wenn thread-safe, dann \textbf{ConcurrentHashMap}
+  Wenn thread-safe nötig, dann \textbf{ConcurrentHashMap}
 \end{center}
+}
 
 
 %%%%%%%%%%%%%%%%%
 %   Properties  %
 %%%%%%%%%%%%%%%%%
 
-\frame{
-\frametitle{Properties}
+\frame{\frametitle{Properties}
 \begin{center}
   \begin{itemize}[<+->]
-    \item ...
+    \item seit 1.0
+    \item extends Hashtable\textless\,Object,Object\textgreater
+    \item setProperty(String key, String value) nutzen anstatt put/putAll (lassen Object zu)
+    \item Konstruktor nimmt eine Properties Instanz als default-Werte
+    \item load(Reader) / store(Writer, String)
+    \item store schreibt keine defaults
+    \item Kommentare mit \# sind konfigurierbar unterstützt
+    \item Leerzeichen in keys und führende in values werden mit ''\textbackslash\ '' geschrieben
+    \item thread-safe, weil Hashtable
+    \item obwohl von Hashtable abgeraten wird, wird von Properties (noch) nicht abgeraten
   \end{itemize}
+\end{center}
+}
+
+\frame{\frametitle{Properties - Meine Meinung}
+  \begin{block}{falsch implementiert}
+    extends Hashtable\textless\,Object,Object\textgreater , man soll aber nur mit Strings arbeiten $\Rightarrow$ wieso dann nicht extends Hashtable\textless\,String,String\textgreater ?
+  \end{block}
+}
+
+\frame{\frametitle{Properties - Wann nehmen?}
+\begin{center}
+  key-value-Paare als Konfiguration, die man persistieren möchte (siehe load/store) \\\pause
+  Alternative: java.util.prefs.Preferences
 \end{center}
 }
 
