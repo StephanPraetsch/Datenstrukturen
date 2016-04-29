@@ -6,6 +6,10 @@
 \end{center}
 }
 
+%%%%%%%%%%%%%%%%%
+%    HashMap    %
+%%%%%%%%%%%%%%%%%
+
 \frame{
 \frametitle{HashMap}
 \begin{center}
@@ -54,6 +58,11 @@
   oft get/put
 \end{center}
 }
+
+
+%%%%%%%%%%%%%%%%%
+% LinkedHashMap %
+%%%%%%%%%%%%%%%%%
 
 
 \frame{
@@ -111,13 +120,137 @@
 }
 
 
+%%%%%%%%%%%%%%%%%%%%
+% IdentityHashMap  %
+%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{IdentityHashMap}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item ...
+  \end{itemize}
+\end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%
+%   WeakHashMap    %
+%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{WeakHashMap}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item ...
+  \end{itemize}
+\end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+% ConcurrentHashMap %
+%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{ConcurrentHashMap}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item ...
+  \end{itemize}
+\end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%
+%      EnumMap     %
+%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{EnumMap}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item ...
+  \end{itemize}
+\end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%
+%   Hashtable   %
+%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Hashtable}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item ...
+  \end{itemize}
+\end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%
+%   Properties  %
+%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Properties}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item ...
+  \end{itemize}
+\end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%
+%    TreeMap    %
+%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{TreeMap}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item ...
+  \end{itemize}
+\end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% ConcurrentSkipListMap %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{ConcurrentSkipListMap}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item ...
+  \end{itemize}
+\end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%       Übersicht       %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \frame{
 \frametitle{Map - Übersicht}
 \begin{center}
   \begin{tabular}{l|c|c|c|c}
-                       & thread-safe &  Iterator &    Reihenfolge     & null value \\\hline
-  HashMap              &     nein    & fail-fast &                    &   erlaubt  \\
-  LinkedHashMap        &     nein    & fail-fast & insertion / access &   erlaubt  \\
+                        & thread-safe &  Iterator &    Reihenfolge     & null value \\\hline
+  HashMap               &     nein    & fail-fast &                    &   erlaubt  \\
+  LinkedHashMap         &     nein    & fail-fast & insertion / access &   erlaubt  \\
+  IdentityHashMap       &             &           &                    &            \\
+  WeakHashMap           &             &           &                    &            \\
+  ConcurrentHashMap     &             &           &                    &            \\
+  EnumMap               &             &           &                    &            \\
+  Hashtable             &             &           &                    &            \\
+  Properties            &             &           &                    &            \\
+  TreeMap               &             &           &                    &            \\
+  ConcurrentSkipListMap &             &           &                    &            \\
   \end{tabular}
 \end{center}
 }
