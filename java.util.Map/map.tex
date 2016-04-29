@@ -111,8 +111,7 @@
 \end{center}
 }
 
-\frame{
-\frametitle{LinkedHashMap - Wann nehmen?}
+\frame{\frametitle{LinkedHashMap - Wann nehmen?}
 \begin{center}
   Reihenfolge wichtig oder \\\pause
   schnelle Iteration (schneller als HashMap)
@@ -213,20 +212,6 @@
 }
 
 
-%%%%%%%%%%%%%%%%%%%%
-%      EnumMap     %
-%%%%%%%%%%%%%%%%%%%%
-
-\frame{
-\frametitle{EnumMap}
-\begin{center}
-  \begin{itemize}[<+->]
-    \item ...
-  \end{itemize}
-\end{center}
-}
-
-
 %%%%%%%%%%%%%%%%%
 %   Hashtable   %
 %%%%%%%%%%%%%%%%%
@@ -235,10 +220,23 @@
 \frametitle{Hashtable}
 \begin{center}
   \begin{itemize}[<+->]
-    \item ...
+    \item fail-fast iterator
+    \item thread-safe
+    \item seit 1.0
+    \item keine null-keys / values
+    \item keys müssen hashCode/equals implementieren
+    \item (initial) capacity and load factor: für Speicher- und Laufzeit-Optimierung (bspw. rehash)
+    \item alles mit public ist synchronisiert
   \end{itemize}
 \end{center}
 }
+
+\frame{\frametitle{Hashtable - Wann nehmen?}
+\begin{center}
+  \textbf{Gar nicht mehr} \\\pause
+  Wenn thread-safe nicht nötig, dann \textbf{HashMap} \\
+  Wenn thread-safe, dann \textbf{ConcurrentHashMap}
+\end{center}
 
 
 %%%%%%%%%%%%%%%%%
@@ -247,6 +245,20 @@
 
 \frame{
 \frametitle{Properties}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item ...
+  \end{itemize}
+\end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%
+%      EnumMap     %
+%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{EnumMap}
 \begin{center}
   \begin{itemize}[<+->]
     \item ...
