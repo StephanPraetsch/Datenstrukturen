@@ -2,18 +2,23 @@
 
 \begin{frame}[fragile]
   \frametitle{Hilfsfunktionen für Listen}
+
   \begin{block}{java.util.Collections.emptyList()}
     \begin{lstlisting}
       List<String> l = Collections.emptyList();
     \end{lstlisting}
   \end{block}
+
   \pause
+  
   \begin{block}{com.google.common.collect.Lists.newArrayList(T...)}
     \begin{lstlisting}
       List<String> l = Lists.newArrayList("a", "b", "c", "d");
     \end{lstlisting}
   \end{block}
+
   \pause
+  
   \begin{block}{java.util.AbstractList.subList(int, int)}
     from-index inklusiv, to-index exklusiv
     \begin{lstlisting}
@@ -21,27 +26,136 @@
       List<String> sub = l.subList(2,5);
     \end{lstlisting}
   \end{block}
+  
   \pause
+  
   \begin{block}{java.util.Collections.unmodifiableList(List\textless? extends T\textgreater)}
     \begin{lstlisting}
       Collections.unmodifiableList(list).add("a"); // wirft UnsupportedOperationException
     \end{lstlisting}
   \end{block}
+
 \end{frame}
+
 \begin{frame}[fragile]
   \frametitle{Hilfsfunktionen für Listen}
+
   \begin{block}{java.util.Collections.singletonList(T)}
     \begin{lstlisting}
       List<String> list = Collections.singletonList("a");
     \end{lstlisting}
   \end{block}
+  
   \pause
+  
   \begin{block}{java.util.Collections.synchronizedList(List\textless T\textgreater)}
-    wrappt eine nicht synchronisierte List
+    erzeugt eine synchronisierte List
     \begin{lstlisting}
       List<String> l = ...
       List<String> s = Collections.synchronizedList(l);
     \end{lstlisting}
   \end{block}
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%
+%      Map        %
+%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+  \frametitle{Hilfsfunktionen für Maps}
+
+  \begin{block}{java.util.Collections.synchronizedMap(Map\textless K, V\textgreater)}
+    erzeugt eine synchronisierte Map
+    \begin{lstlisting}
+      Map<String, String> m = ...
+      Map<String, String> s = Collections.synchronizedMap(m);
+    \end{lstlisting}
+  \end{block}
+  
+  \pause
+
+  \begin{block}{java.util.Collections.unmodifiableMap(Map\textless K, V\textgreater)}
+    \begin{lstlisting}
+      Map<String, String> unmodifiableMap = Collections.unmodifiableMap(map);
+      unmodifiableMap.put("a", "b"); // UnsupportedOperationException
+    \end{lstlisting}
+  \end{block}
+
+  \pause
+  
+  \begin{block}{java.util.Collections.emptyMap()}
+    unmodizierbare, leere Map
+    \begin{lstlisting}
+      Map<String, String> empty = Collections.emptyMap();
+      empty.put("a", "b");// UnsupportedOperationException
+    \end{lstlisting}
+  \end{block}
+
+\end{frame}
+  
+\begin{frame}[fragile]
+  \frametitle{Hilfsfunktionen für Maps}
+  
+  \begin{block}{java.util.Collections.singletonMap(K, V)}
+    unmodizierbare, ein-elementige Map
+    \begin{lstlisting}
+      Map<String, String> single = Collections.singletonMap("a", "b");
+      single.put("a", "b");// UnsupportedOperationException
+    \end{lstlisting}
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Hilfsfunktionen für Maps}
+
+  \begin{block}{java.util.Map.computeIfAbsent(K, Function\textless ? super K, ? extends V\textgreater)}
+    füge in eine existierende Liste ein, ggf. erzeuge diese Liste
+    \begin{lstlisting}
+    void addOld(Map<String, List<String>> map, String key, String value) {
+        List<String> list = map.get(key);
+        if (list == null) {
+            list = new ArrayList<>();
+            map.put(key, list);
+        }
+        list.add(value);
+    }
+      \end{lstlisting}
+      \pause
+      \begin{lstlisting}
+    void addNew(Map<String, List<String>> map, String key, String value) {
+        map.computeIfAbsent(key, x -> new ArrayList<>()).add(value);
+    }
+    \end{lstlisting}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Hilfsfunktionen für Maps}
+
+  \begin{block}{java.util.Map.getOrDefault(Object, V)}
+    default value in Map
+    \begin{lstlisting}
+            // alt
+            Map<String, String> map = new HashMap<>();
+            String s = map.get("a");
+            if (s == null) {
+                s = "default";
+            }
+            System.out.println(s);
+      \end{lstlisting}
+      \pause
+      \begin{lstlisting}
+            Map<String, String> map = new HashMap<>();
+            map.put("a", "a");
+            System.out.println(map.getOrDefault("a", "default"));
+            System.out.println(map.getOrDefault("b", "default"));
+    \end{lstlisting}
+  \end{block}
+
 \end{frame}
 
