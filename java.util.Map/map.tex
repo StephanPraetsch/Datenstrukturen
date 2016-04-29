@@ -172,7 +172,7 @@
 \end{center}
 }
 
-\frame{\frametitle{IdentityHashMap - Wann nehmen?}
+\frame{\frametitle{WeakHashMap - Wann nehmen?}
 \begin{center}
   object reference als key und GC soll die Map beaufsichtigen (also sehr selten) \\\pause
   data cache implementations
@@ -283,8 +283,21 @@
 \frametitle{EnumMap}
 \begin{center}
   \begin{itemize}[<+->]
-    \item ...
+    \item keys = enum values
+    \item intern ein Array pro enum-value
+    \item sehr kompakt und effizient
+    \item Reihenfolge ist die, wie die Enums deklariert sind
+    \item weakly consistent iterators
+    \item keine null keys, aber null values erlaubt
+    \item nicht thread-safe
+    \item basic operations in \O{1}
   \end{itemize}
+\end{center}
+}
+
+\frame{\frametitle{EnumMap - Wann nehmen?}
+\begin{center}
+  wenn keys enums sind
 \end{center}
 }
 
@@ -333,7 +346,7 @@
   ConcurrentHashMap     &      ja     & fail-safe &                    & weder key noch value \\
   Hashtable             &      ja     & fail-fast &                    & weder key noch value \\
   Properties            &      ja     & fail-fast &                    & weder key noch value \\
-  EnumMap               &             &           &                    &                      \\
+  EnumMap               &     nein    &   weakly  &    wie das Enum    &        values        \\
   TreeMap               &             &           &                    &                      \\
   ConcurrentSkipListMap &             &           &                    &                      \\
   \end{tabular}
