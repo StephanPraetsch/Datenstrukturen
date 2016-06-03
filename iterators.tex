@@ -35,5 +35,31 @@
       \item Nicht auf ConcurrentModificationException im normalen Programmfluss reagieren, das ist nur eine Bug-Erkennung!
     \end{itemize}
   \end{block}
-  
+
 \end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Iteratoren : fail-safe}
+
+klappt: gibt [a,a] aus
+  \begin{lstlisting}
+  void failSafeIterator() {
+    List<String> l = new CopyOnWriteArrayList<>();
+    l.add("a");
+    for (String s : l) {
+      l.add(s);
+    }
+    System.out.println(l);
+  }
+  \end{lstlisting}
+
+  \begin{block}{Was ist fail-safe ?}
+    \begin{itemize}
+      \item keine Exception (ConcurrentModificationException)
+      \item Iteratoren arbeiten auf einer Kopie
+      \item Kopie muss nicht aktuell sein
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
