@@ -174,9 +174,10 @@ Aber \href{http://java-performance.info/java-collections-overview/}{Java Perform
 }
 
 \frame{
-\frametitle{Stack - Wann nehmen?}
+\frametitle{Vector - Wann nehmen?}
 \begin{center}
   \begin{itemize}[<+->]
+    \item NIE!
     \item existiert nur noch wegen Abwärtskompatibilität (wurde in Collections ''reingepresst'')
     \item wenn \textbf{kein thread-safe} benötigt wird, dann \textbf{ArrayList}, weil schneller
     \item wenn \textbf{thread-safe} benötigt wird, dann unklar: Vector, Collections.synchronizedList oder CopyOnWriteArrayList
