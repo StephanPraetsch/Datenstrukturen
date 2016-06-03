@@ -62,4 +62,27 @@ klappt: gibt [a,a] aus
   \end{block}
 
 \end{frame}
+    
+\begin{frame}[fragile]
+  \frametitle{Iteratoren : weakly-consistent}
 
+funktioniert, Ausgabe [a, aa]
+  \begin{lstlisting}
+  void weaklyConsistentIterator() {
+    ConcurrentSkipListSet<String> set = new ConcurrentSkipListSet<>();
+    set.add("a");
+    for (String s : set) {
+      set.add(s + s);
+    }
+    System.out.println(set);
+  }
+  \end{lstlisting}
+
+  \begin{block}{Was ist weakly-consistent ?}
+    \begin{itemize}
+      \item keine Exception (ConcurrentModificationException)
+      \item während Iteration: zeigen vielleicht Änderungen an, vielleicht auch nicht
+    \end{itemize}
+  \end{block}
+
+\end{frame}
