@@ -174,7 +174,8 @@
 \frame{\frametitle{WeakHashMap - Wann nehmen?}
 \begin{center}
   object reference als key und GC soll die Map beaufsichtigen (also sehr selten) \\\pause
-  data cache implementations
+  data cache implementations \\\pause
+  EIGENTLICH \textbf{nie}: wenn cache, dann guava oder javax.cache (JSR107) oder ...
 \end{center}
 }
 
