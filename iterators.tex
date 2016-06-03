@@ -1,0 +1,39 @@
+\section{Iteratoren}
+
+\begin{frame}[fragile]
+  \frametitle{Iteratoren : fail-fast}
+
+  \begin{lstlisting}
+  void failFastIterator() {
+    List<String> l = new ArrayList<>();
+    l.add("a");
+    for (String s : l) { // ConcurrentModificationException beim zweiten Aufruf
+      l.add(s);
+    }
+  }
+  \end{lstlisting}
+
+  \begin{block}{Was ist fail-fast ?}
+    \begin{itemize}[<+->]
+      \item Iterator wird erstellt
+      \item zugrunde liegende Collection wird modifiziert (ausgenommen Iterator.remove())
+      \item Iterator wirft beim nächsten Aufruf ConcurrentModificationException
+      \item[$\Rightarrow$] schneller Fehler im Fall einer concurrent modification
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Iteratoren : fail-fast}
+
+  \begin{block}{Achtung}
+    \begin{itemize}[<+->]
+      \item wird über ein internes status feld realisiert, bspw ArrayList mit int modCount
+      \item fail-fast ist nicht garantiert
+      \item Heuristik entscheidet: Es kann auch keine ConcurrentModificationException fliegen, trotz Modifikation!
+      \item Nicht auf ConcurrentModificationException im normalen Programmfluss reagieren, das ist nur eine Bug-Erkennung!
+    \end{itemize}
+  \end{block}
+  
+\end{frame}
