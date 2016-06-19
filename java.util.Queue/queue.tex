@@ -4,3 +4,399 @@
 Queues
 \end{center}
 }
+
+\frame{
+\frametitle{PriorityQueue}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item Array beinhaltet Elemente
+    \item Umsetzung durch balanced binary heap
+    \item geordnet
+    \item Null-Elemente nicht erlaubt
+    \item nicht thread-safe
+    \item fail-fast Iterator
+    \item Dublikate erlaubt
+  \end{itemize}
+\end{center}
+}
+
+\frame{
+\frametitle{PriorityQueue - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+  offer            	& \O{log(n)}\\
+  poll             	& \O{log(n)}\\
+  remove()         	& \O{log(n)}\\
+  add              	& \O{log(n)}\\
+  remove(Object)	& \O{n}\\
+  contains			& \O{n}\\
+  peek				& \O{1}\\
+  element			& \O{1}\\
+  size				& \O{1}
+  \end{tabular}
+\end{center}
+} % TODO: Unterschied take und poll/remove?
+
+
+\frame{
+\frametitle{PriorityQueue - Anwendung}
+\begin{center}
+ \begin{itemize}[<+->]
+  \item priorisierte Aufgabenliste
+  \item NavigableSet or PriorityQueue
+   \begin{itemize}[<+->]
+  \item NavigableSet, wenn die wartenden Tasks unstersucht un Manipuliert werden müssen
+  \item PriorityQueue, effizienter Zgriff aus das nächste Element
+ \end{itemize}
+\end{itemize}
+\end{center}
+}
+
+
+\frame{
+\frametitle{ConcurrentLinkedQueue}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item thread-safe
+     \item Null-Elemente nicht erlaubt
+     \item weakly-consistent iterator
+	 \item nutzt Verlinkung der Inhalte
+	 \item CAS-basierter wartefreier Algorihmus für Synchronisation
+  \end{itemize}
+\end{center}
+}
+
+
+\frame{
+\frametitle{ConcurrentLinkedQueue - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+  offer            	& \O{1}\\
+  poll             	& \O{1}\\
+  remove()         	& \O{1}\\
+  add              	& \O{1}\\
+  remove(Object)	& \O{n}\\
+  contains			& \O{n}\\
+  peek				& \O{1}\\
+  element			& \O{1}\\
+  size				& \O{n}
+  \end{tabular}
+\end{center}
+}
+
+
+\frame{
+\frametitle{ConcurrentLinkedQueue - Anwendung}
+\begin{center}
+  \item effizente Multithreading Queue
+\end{center}
+}
+
+
+\frame{
+\frametitle{PriorityBlockingQueue}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item thread-safe
+    \item blockierend
+	\item fail-fast iterator
+	\item Performence und Sortierungscharacteristiken analog zur PriorityQueue
+  \end{itemize}
+\end{center}
+}
+
+\frame{
+\frametitle{PriorityBlockingQueue - Anwendung}
+\begin{center}
+  \item effiziente, blockierende, thread-safe Queue
+\end{center}
+}
+
+\frame{
+\frametitle{DelayQueue}
+\begin{center}
+  \begin{itemize}[<+->]
+  \item spezielle PriorityQueue
+  \begin{itemize}[<+->]
+  \item Items werden intern in einer PriorityQueue verwaltet
+  \item Sortierung nach Delay-Time
+  \item Elemente können erst nach bestimmtem Delay entfernt werden
+  \end{itemize}
+  \item blockierend
+  \item unbegrenzt
+  \item keine Null-Elemente
+  \item thread-safe
+  \item warten auf expired per separatem Thread
+  \item fail-fast Iterator
+  \end{itemize}
+\end{center}
+}
+
+
+\frame{
+\frametitle{DelayQueue - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+  offer            	& \O{log(n)}\\
+  poll             	& \O{log(n)}\\
+  peek				& \O{1}\\
+  size				& \O{1}
+  % analog to PriorityQueue?
+  \end{tabular}
+\end{center}
+}
+
+\frame{
+\frametitle{DelayQueue - Anwendung}
+\begin{center}
+  \item delayed Tasks, z.B. für Erinnerungssnachrichten
+\end{center}
+}
+
+\frame{
+\frametitle{SynchronousQueue}
+\begin{center}
+  \begin{itemize}[<+->]
+  \item ohne interne Kapazität
+  \begin{itemize}[<+->]
+  \item rendevous channel
+    \end{itemize}
+  \item blockierend
+  \item spezielle PriorityQueue
+  \item keine Null-Elemente
+  \item thread-safe
+  \item empty Iterator  
+  \end{itemize}
+\end{center}
+}
+
+
+\frame{
+\frametitle{SynchronousQueue - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+  offer            	& \O{1}\\
+  poll             	& \O{1}\\
+  \end{tabular}
+\end{center}
+}
+
+\frame{
+\frametitle{SynchronousQueue - Anwendung}
+\begin{center}
+  \item Anwedung in Arbeitsteilungs-System
+  \item genügend Producer, so dass die Consumer nicht warten müssen
+\end{center}
+}
+
+\frame{
+\frametitle{ArrayBlockingQueue}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item basiert auf circular array
+     \item weakly-consistent iterator 
+     \item thread-safe, blockierend
+     \item begrenzte Kapazität
+	\item keine Null-Elemente
+  \end{itemize}
+\end{center}
+}
+
+
+\frame{
+\frametitle{ArrayBlockingQueue - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+ insert				& \O{1}\\
+ remove 			& \O{1}\\
+ offer            	& \O{1}\\
+ poll             	& \O{1}\\
+ add              	& \O{1}\\
+ peek				& \O{1}\\
+ element			& \O{1}\\
+ take				& \O{1}\\
+ contains			& \O{n}\\
+ remove(Object)		& \O{n}\\
+ size				& \O{1} 
+  %(Insertion and Remove von Elemente in der Mitte benötigt O(n).. reorganisation der elemente für kompakte Struktur, nur über Iterator mögl, da queue)
+  \end{tabular}
+\end{center}
+}
+
+\frame{
+\frametitle{ArrayBlockingQueue - Anwendung}
+\begin{center}
+  \item Vorteil gegenüber nicht zirkularen Queues, wie z.B. ArrayList: Beim Entfernen des Head müssen nicht alle Elemente verschoben werden
+\end{center}
+}
+
+\frame{
+\frametitle{ArrayDeque}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item basiert auf circular array
+    \item nicht thread-safe
+    \item fail-fast Iterator
+    \item keine Null-Values
+   
+  \end{itemize}
+\end{center}
+}
+
+
+\frame{
+\frametitle{ArrayDeque - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+% Zugriff auf Anfang/Ende, Entfernen von Anfang/Ende immer O(1), addFirst/addLast, pollFirst/pollLast, offerFirst/offerLast, removeFirst/removeLast ....
+insertion/removal & \O{1} \\
+ contains			& \O{n}\\
+ remove(Object)		& \O{n}\\
+ removeFirstOccurence(Object)		& \O{n}\\
+ removeLastOccurence(Object)		& \O{n}\\
+ size				& \O{1} 
+  %(Insertion and Remove von Elemente in der Mitte benötigt O(n).. reorganisation der elemente für kompakte Struktur, nur über Iterator mögl, da queue)
+  \end{tabular}
+\end{center}
+}
+
+\frame{
+\frametitle{ArrayDeque - Anwendung}
+\begin{center}
+  \item Stack-Verwendung schneller als Stack
+  \item Queue-Verwendung schneller als LinkedList
+\end{center}
+}
+
+%TODO: LinkedList siehe Listen
+% ArrayDeque und LinkedList beide Queue/Deque-Zugriffe in konstanter Zeit, aber ArrayDeque ansonsten besser
+%LinkedList nur nehmen, falls random access benötigt wird, aber O(n)
+
+
+\frame{
+\frametitle{LinkedBlockingQueue}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item verlinkte Struktur
+    \item concurrent
+    \item optional begrenzt
+    \item Iterator weakly-consistent
+    \item keine Null-Elemente
+  \end{itemize}
+\end{center}
+}
+
+
+\frame{
+\frametitle{LinkedBlockingQueue - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+   insertion/removal	& \O{1} \\
+   size				& \O{1} \\
+   contains			& \O{n}\\
+   remove(object)	& \O{n} \\
+  \end{tabular}
+\end{center}
+}
+
+
+\frame{
+\frametitle{LinkedTransferQueue}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item verlinkte Struktur
+    \item Sender kann auf Empfänger warten
+    \item thread-safe
+    \item keine Null-Elemente
+    \item weakly-consistent Iterator
+    \item CAS, wartefrei
+  \end{itemize}
+\end{center}
+}
+
+
+\frame{
+\frametitle{LinkedTransferQueue - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+  insertions/removal & \O{1} \\
+  transfer			& \O{1} \\
+  tryTransfer		& \O{1} \\
+  size				& \O{n} \\
+  contains			& \O{n} \\
+  remove(Object)	& \O{n} \\
+  \end{tabular}
+\end{center}
+}
+
+\frame{
+\frametitle{LinkedTransferQueue - Anwendung}
+\begin{center}
+  \item performante Multithreading Queue mit Produzent/Consumer-Synchronisation
+\end{center}
+}
+
+\frame{
+\frametitle{LinkedBlockingDeque}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item verlinkte Struktur
+    \item optional begrenzt
+    \item weakly-consistent Iterator
+    \item keine Null-Elemente
+  \end{itemize}
+\end{center}
+}
+
+
+\frame{
+\frametitle{LinkedBlockingDeque - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+    insertion/removal				& \O{1} \\
+   size				& \O{1} \\
+   contains			& \O{n} \\
+   remove(object)	& \O{n} \\
+   removeFirstOccurence(Object)		& \O{n}\\
+   removeLastOccurence(Object)		& \O{n}\\
+  \end{tabular}
+\end{center}
+}
+
+
+\frame{
+\frametitle{ConcurrentLinkedDeque}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item verlinkte Struktur
+    \item keine Null-Elemente
+    \item thread-safe
+    \item Iterator weakly-consistent
+    \item CAS, wartefrei
+  \end{itemize}
+\end{center}
+}
+
+
+\frame{
+\frametitle{ConcurrentLinkedDeque - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+  insertion, remove Ende/Anfang \O{1} \\
+  remove(Object)		& \O{n} \\
+  contains				& \O{n} \\
+  size					& \O{n} \\
+  \end{tabular}
+\end{center}
+}
+
