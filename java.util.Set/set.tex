@@ -4,3 +4,210 @@
 Sets
 \end{center}
 }
+
+\frame{
+\frametitle{HashSet}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item backed by Hashmap
+    \item fail-fast Iterator
+    \item Null-Elemente
+    \item langsame iteration .. next O(h/n)
+  \end{itemize}
+\end{center}
+}
+
+\frame{
+\frametitle{HashSet - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+  add            	& \O{1}\\
+  remove             	& \O{1}\\
+  contains         	& \O{1}\\
+  size              	& \O{1}\\
+  \end{tabular}
+\end{center}
+} % insert und retrieve konstant, solange keine Kollision auftritt ... traversal LinkedList
+%iteration proportional zur Größe der HashMap + Anzahl Elemente
+
+
+
+\frame{
+\frametitle{HashSet - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+  add            	& \O{1}\\
+  remove             	& \O{1}\\
+  contains         	& \O{1}\\
+  size              	& \O{1}\\
+  \end{tabular}
+\end{center}
+}
+
+\frame{
+\frametitle{LinkedHashSet}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item erweitert HashSet um insertion order
+    \item fail-fast Iterator
+    \item Null-Elemente
+    \item performantere Iteration
+  \end{itemize}
+\end{center}
+}
+
+\frame{
+\frametitle{LinkedHashSet - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+  add            	& \O{1}\\
+  remove             	& \O{1}\\
+  contains         	& \O{1}\\
+  size              	& \O{1}\\
+  \end{tabular}
+\end{center}
+}
+
+\frame{
+\frametitle{LinkedHashSet - Anwendung}
+\begin{center}
+ \begin{itemize}[<+->]
+  \item HashSet vs Linked
+   \begin{itemize}[<+->]
+  \item LinkedHashSet nur, wenn insertion order relevant und schnelle iteration erforderlich, ansonsten HashSet
+ \end{itemize}
+\end{itemize}
+\end{center}
+}
+
+\frame{
+\frametitle{CopyOnWriteArraySet}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item nutzt CopyOnWriteArrayList, wiederum verwendet immutable array
+    \item bei Änderungen muss ein neues Array erstellt werden
+    \item thread-safe
+    \item schnelle Leseoperationen, teure Modifizierung
+    \item iterator erlaubt keine Modfizierung
+    \item Null-Elemente
+    \item Iterator fail-safe? TODO
+  \end{itemize}
+\end{center}
+}
+
+\frame{
+\frametitle{CopyOnWriteArraySet - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+  add            	& \O{n}\\
+  remove             	& \O{n}\\
+  contains         	& \O{n}\\
+  size              	& \O{1}\\
+  \end{tabular}
+\end{center}
+}
+
+\frame{
+\frametitle{CopyOnWriteArraySet - Anwendung}
+\begin{center}
+ \begin{itemize}[<+->]
+  \item HashSet vs Linked
+   \begin{itemize}[<+->]
+  \item für wenige Such- und Einfügeopertionen geeignet
+  \item für Subject-Observer desgin pattern
+ \end{itemize}
+\end{itemize}
+\end{center}
+}
+
+\frame{
+\frametitle{ConcurrentSkipListSet}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item beinhaltet ConcurrentSkipListMap
+    \item sortiert
+    \item tread-safe
+    \item keine Null-Elemente
+    \item weakly-consistent iterator
+  \end{itemize}
+\end{center}
+}
+
+\frame{
+\frametitle{ConcurrentSkipListSet - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+  add            	& \O{log n}\\
+  remove             & \O{log n}\\
+  contains  		& \O{log n}\\
+  size				& \O{n}\\
+  \end{tabular}
+\end{center}
+}
+
+
+
+
+\frame{
+\frametitle{TreeSet}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item beinhaltet TreeMap
+    \item sortiert
+    \item fail-fasts iterator
+    \item balancierten Binärbaum
+    \item keine Null-Values
+  \end{itemize}
+\end{center}
+}
+
+\frame{
+\frametitle{TreeSet - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+  add            	& \O{log n}\\
+  remove             & \O{log n}\\
+  contains  		& \O{log n}\\
+  size				& \O{1}\\
+  \end{tabular}
+\end{center}
+}
+
+
+
+\frame{
+\frametitle{EnumSet}
+\begin{center}
+  \begin{itemize}[<+->]
+    \item gleicher Enum-Type
+    \item JumboEnumSet(>64 Elemente)/RegularEnumSet
+    \item kompakt, effizient
+    \item Bitmanipulation
+    \item Konstandendeklarationsreihenfolge
+    \item weakly-consistent iterator
+    \item keine Null-Elemente
+    \item Basic Operationen schneller als HashSet
+  \end{itemize}
+\end{center}
+}
+
+\frame{
+\frametitle{EnumSet - Zugriffszeiten}
+\begin{center}
+  \begin{tabular}{l|l}
+  Operation        	& Laufzeit \\\hline
+  add            	& \O{1}\\
+  remove             & \O{1}\\
+  contains  		& \O{1}\\
+  size				& \O{1}\\
+  \end{tabular}
+\end{center}
+}
+
+
